@@ -1,0 +1,13 @@
+.text {
+    &-primary {
+        color: var(--primary)!important;
+
+        &-variant {
+            color: var(--primary-variant)!important;
+        }
+    }
+
+    &-secondary {
+        color: var(--secondary)!important;
+    }
+}
