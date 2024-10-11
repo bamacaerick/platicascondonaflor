@@ -1,0 +1,11 @@
+.contact {
+    &-widget {
+        border-radius: 10px;
+        background-color: var(--white);
+        box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.15);
+
+        &-text {
+            font-size: 24px;
+        }
+    }
+}

@@ -28,27 +28,28 @@
 ------------------------------------------------*/
 
 (function ($) {
-  "use strict";
+  ("use strict");
 
   /*----------------------------------------------
       Preloader
   ----------------------------------------------*/
-  $(window).on('load', function () {
-      $('#preloader-active').delay(450).fadeOut('slow');
-      $('body').delay(450).css({
-          'overflow': 'visible'
-      });
-      var counter = 0;
-      var c = 0;
-      var i = setInterval(function () {
-          $(".loading-page .counter .number").html(c + "%");
-          $(".loading-page .counter .line").css("width", c + "%");
+  $(window).on("load", function () {
+    $("#preloader-active").delay(450).fadeOut("slow");
+    $("body").delay(450).css({
+      overflow: "visible",
+    });
+    var counter = 0;
+    var c = 0;
+    var i = setInterval(function () {
+      $(".loading-page .counter .number").html(c + "%");
+      $(".loading-page .counter .line").css("width", c + "%");
 
-          counter++; c++;
-          if (counter == 101) {
-              clearInterval(i);
-          }
-      }, 10);
+      counter++;
+      c++;
+      if (counter == 101) {
+        clearInterval(i);
+      }
+    }, 10);
   });
 
   /*-----------------------------------
@@ -69,7 +70,10 @@
     Data-background
   -----------------------------------*/
   $("[data-background]").each(function () {
-    $(this).css("background-image", "url(" + $(this).attr("data-background") + ")");
+    $(this).css(
+      "background-image",
+      "url(" + $(this).attr("data-background") + ")"
+    );
   });
 
   /*-----------------------------------
@@ -78,13 +82,20 @@
   function mainSlider() {
     var BasicSlider = $(".slider-active");
     BasicSlider.on("init", function (e, slick) {
-      var $firstAnimatingElements = $(".single-slider:first-child").find("[data-animation]");
+      var $firstAnimatingElements = $(".single-slider:first-child").find(
+        "[data-animation]"
+      );
       doAnimations($firstAnimatingElements);
     });
-    BasicSlider.on("beforeChange", function (e, slick, currentSlide, nextSlide) {
-      var $animatingElements = $('.single-slider[data-slick-index="' + nextSlide + '"]').find("[data-animation]");
-      doAnimations($animatingElements);
-    });
+    BasicSlider.on(
+      "beforeChange",
+      function (e, slick, currentSlide, nextSlide) {
+        var $animatingElements = $(
+          '.single-slider[data-slick-index="' + nextSlide + '"]'
+        ).find("[data-animation]");
+        doAnimations($animatingElements);
+      }
+    );
     BasicSlider.slick({
       autoplay: true,
       autoplaySpeed: 4000,
@@ -92,8 +103,10 @@
       fade: true,
       arrows: false,
       // rtl: true, // Enable RTL support
-      prevArrow: '<button type="button" class="slick-prev"><i class="ti-angle-left"></i></button>',
-      nextArrow: '<button type="button" class="slick-next"><i class="ti-angle-right"></i></button>',
+      prevArrow:
+        '<button type="button" class="slick-prev"><i class="ti-angle-left"></i></button>',
+      nextArrow:
+        '<button type="button" class="slick-next"><i class="ti-angle-right"></i></button>',
       responsive: [
         {
           breakpoint: 1024,
@@ -123,7 +136,8 @@
     });
 
     function doAnimations(elements) {
-      var animationEndEvents = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
+      var animationEndEvents =
+        "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
       elements.each(function () {
         var $this = $(this);
         var $animationDelay = $this.data("delay");
@@ -144,17 +158,17 @@
     slider - urgent area-active
   ----------------------------------------------*/
   $(".urgent-area-slide").slick({
-    dots: true,
+    dots: false,
     infinite: true,
-    autoplaySpeed: 400,
+    autoplaySpeed: 5000,
     arrows: false,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     // rtl: true, // Enable RTL support
   });
 
- /*----------------------------------------------
+  /*----------------------------------------------
     slider - Event Area-active
   ----------------------------------------------*/
 
@@ -196,13 +210,17 @@
     slidesToScroll: 1,
     autoplay: false,
     // rtl: true, // Enable RTL support
-    prevArrow: '<button type="button" class="slick-prev slick-arrow"><i class="ri-arrow-left-line"></i></button>',
-    nextArrow: '<button type="button" class="slick-next slick-arrow"><i class="ri-arrow-right-line"></i></button>',
+    prevArrow:
+      '<button type="button" class="slick-prev slick-arrow"><i class="ri-arrow-left-line"></i></button>',
+    nextArrow:
+      '<button type="button" class="slick-next slick-arrow"><i class="ri-arrow-right-line"></i></button>',
     customPaging: function (slider, i) {
       // Custom content for each dot
       return `<div class="slick-custom-dot">
                   <div class="testimonial-img-horizontal">
-                      <img class="w-100" src="assets/images/gallery/testimonial-${i + 1}.png" alt="image">
+                      <img class="w-100" src="assets/images/gallery/testimonial-${
+                        i + 1
+                      }.png" alt="image">
                   </div>
               </div>`;
     },
@@ -219,8 +237,10 @@
     slidesToScroll: 1,
     autoplay: false,
     // rtl: true, // Enable RTL support
-    prevArrow: '<button type="button" class="slick-prev slick-arrow"><i class="ri-arrow-left-s-line"></i></button>',
-    nextArrow: '<button type="button" class="slick-next slick-arrow"><i class="ri-arrow-right-s-line"></i></button>',
+    prevArrow:
+      '<button type="button" class="slick-prev slick-arrow"><i class="ri-arrow-left-s-line"></i></button>',
+    nextArrow:
+      '<button type="button" class="slick-next slick-arrow"><i class="ri-arrow-right-s-line"></i></button>',
     responsive: [
       {
         breakpoint: 1200,
@@ -244,27 +264,36 @@
     slider - Testimonial Area-active 03
   ----------------------------------------------*/
   $(".testimonial-slider-three-active").slick({
+    autoplay: true,
+    autoplaySpeed: 1500,
     dots: true,
     infinite: true,
     arrows: false,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
     // rtl: true, // Enable RTL support
-    prevArrow: '<button type="button" class="slick-prev slick-arrow"><i class="ri-arrow-left-s-line"></i></button>',
-    nextArrow: '<button type="button" class="slick-next slick-arrow"><i class="ri-arrow-right-s-line"></i></button>',
+    prevArrow:
+      '<button type="button" class="slick-prev slick-arrow"><i class="ri-arrow-left-s-line"></i></button>',
+    nextArrow:
+      '<button type="button" class="slick-next slick-arrow"><i class="ri-arrow-right-s-line"></i></button>',
   });
 
   /*----------------------------------------------
     slider - Gallery Area-active
   ----------------------------------------------*/
   $(".gallery-slider").slick({
-    slidesToShow: 6,
-    slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1500,
+    dots: true,
     infinite: true,
     arrows: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    // rtl: true, // Enable RTL support
+    prevArrow:
+      '<button type="button" class="slick-prev slick-arrow"><i class="ri-arrow-left-s-line"></i></button>',
+    nextArrow:
+      '<button type="button" class="slick-next slick-arrow"><i class="ri-arrow-right-s-line"></i></button>',
     // rtl: true, // Enable RTL support
     responsive: [
       {
@@ -332,8 +361,10 @@
     infinite: true,
     arrows: true,
     // rtl: true, // Enable RTL support
-    prevArrow: '<button type="button" class="slick-arrow-prev"><p class="arrow-text">Previews</p><div class="slick-prev"><i class="ri-arrow-left-line"></i></div></button>',
-    nextArrow: '<button type="button" class="slick-arrow-next"><p class="arrow-text">Next Previews</p><div class="slick-next"><i class="ri-arrow-right-line"></i></div></button>',
+    prevArrow:
+      '<button type="button" class="slick-arrow-prev"><p class="arrow-text">Previews</p><div class="slick-prev"><i class="ri-arrow-left-line"></i></div></button>',
+    nextArrow:
+      '<button type="button" class="slick-arrow-next"><p class="arrow-text">Next Previews</p><div class="slick-next"><i class="ri-arrow-right-line"></i></div></button>',
   });
 
   /*----------------------------------------------
@@ -370,13 +401,44 @@
   });
 
   /*----------------------------------------------
+    slider- custom home banner
+  ----------------------------------------------*/
+  $(".home-slider").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    infinite: true,
+    arrows: false,
+    // responsive: [
+    //   {
+    //     breakpoint: 1200,
+    //     settings: {
+    //       slidesToShow: 3,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 768,
+    //     settings: {
+    //       slidesToShow: 2,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 575,
+    //     settings: {
+    //       slidesToShow: 1,
+    //     },
+    //   },
+    // ],
+  });
+
+  /*----------------------------------------------
     Select 2
   ----------------------------------------------*/
   $(".select2").select2({
     placeholder: "Choose one",
     width: "100%",
   });
-
 
   /*----------------------------------------------
     Custom click expand icon
@@ -390,7 +452,6 @@
       });
     });
   });
-
 
   /*-----------------------------------
     Slick Nav [ Mobile Menu ]
@@ -409,7 +470,6 @@
       }
     }
   });
-  
 
   /*-----------------------------------
     Search box
@@ -436,7 +496,10 @@
   });
 
   $(document).click(function (event) {
-    if (!$(event.target).closest($searchIcon).length && !$(event.target).closest($searchContainer).length) {
+    if (
+      !$(event.target).closest($searchIcon).length &&
+      !$(event.target).closest($searchContainer).length
+    ) {
       $searchContainer.hide();
       $overlay.hide();
     }
@@ -463,7 +526,6 @@
   -----------------------------------*/
   new WOW().init();
 
-
   /*-----------------------------------
     Hover Tilt Effect
   -----------------------------------*/
@@ -479,25 +541,27 @@
   -----------------------------------*/
   $(document).ready(function () {
     $(".toggle-password").click(function () {
-        var passwordInput = $($(this).siblings(".password-input"));
-        var icon = $(this);
-        if (passwordInput.attr("type") == "password") {
-            passwordInput.attr("type", "text");
-            icon.removeClass("ri-eye-line").addClass("ri-eye-off-line");
-        } else {
-            passwordInput.attr("type", "password");
-            icon.removeClass("ri-eye-off-line").addClass("ri-eye-line");
-        }
+      var passwordInput = $($(this).siblings(".password-input"));
+      var icon = $(this);
+      if (passwordInput.attr("type") == "password") {
+        passwordInput.attr("type", "text");
+        icon.removeClass("ri-eye-line").addClass("ri-eye-off-line");
+      } else {
+        passwordInput.attr("type", "password");
+        icon.removeClass("ri-eye-off-line").addClass("ri-eye-line");
+      }
     });
-  })
-  
+  });
+
   /*-----------------------------------
     Play video
   -----------------------------------*/
   $("#play-video").on("click", function (e) {
     e.preventDefault();
     $("#video-overlay").addClass("open");
-    $("#video-overlay").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/RK1RRVR9A2g" frameborder="0" allowfullscreen></iframe>');
+    $("#video-overlay").append(
+      '<iframe width="560" height="315" src="https://www.youtube.com/embed/RK1RRVR9A2g" frameborder="0" allowfullscreen></iframe>'
+    );
   });
 
   $(".video-overlay, .video-overlay-close").on("click", function (e) {
@@ -518,7 +582,9 @@
   $("#play-video-two").on("click", function (e) {
     e.preventDefault();
     $("#video-overlay").addClass("open");
-    $("#video-overlay").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/RK1RRVR9A2g" frameborder="0" allowfullscreen></iframe>');
+    $("#video-overlay").append(
+      '<iframe width="560" height="315" src="https://www.youtube.com/embed/RK1RRVR9A2g" frameborder="0" allowfullscreen></iframe>'
+    );
   });
 
   $(".video-overlay, .video-overlay-close").on("click", function (e) {
@@ -543,11 +609,13 @@
     var progressPath = document.querySelector(".progressParent path");
     var pathLength = progressPath?.getTotalLength();
     if (pathLength) {
-      progressPath.style.transition = progressPath.style.WebkitTransition = "none";
+      progressPath.style.transition = progressPath.style.WebkitTransition =
+        "none";
       progressPath.style.strokeDasharray = pathLength + " " + pathLength;
       progressPath.style.strokeDashoffset = pathLength;
       progressPath.getBoundingClientRect();
-      progressPath.style.transition = progressPath.style.WebkitTransition = "stroke-dashoffset 10ms linear";
+      progressPath.style.transition = progressPath.style.WebkitTransition =
+        "stroke-dashoffset 10ms linear";
       var updateProgress = function () {
         var scroll = $(window).scrollTop();
         var height = $(document).height() - $(window).height();
@@ -573,53 +641,54 @@
     }
   })();
 
-
-  
-        
-    /*-----------------------------------
+  /*-----------------------------------
         selectPricing , Tag
     -----------------------------------*/
-    $(".selectPricing li, .selectTag li").click(function () {
-      $(this).toggleClass('active').siblings().removeClass('active');
+  $(".selectPricing li, .selectTag li").click(function () {
+    $(this).toggleClass("active").siblings().removeClass("active");
   });
 
   /*------------------------------
       payment gateway selection
   -------------------------------*/
-  $(".payment-gateway-list li").on('click', function () {
-      $(".payment-gateway-list li").removeClass("selected");
-      $(this).addClass("selected");
-  })
-
+  $(".payment-gateway-list li").on("click", function () {
+    $(".payment-gateway-list li").removeClass("selected");
+    $(this).addClass("selected");
+  });
 
   // Count pricing
-  $(document).ready(function(){
-    let price_right_parent = $('.priceListing');
-    let left_default_amount = $('.left_default_amount').val();
-        price_right_parent.find('.total_donation_amount').text('$'+ left_default_amount);
+  $(document).ready(function () {
+    let price_right_parent = $(".priceListing");
+    let left_default_amount = $(".left_default_amount").val();
+    price_right_parent
+      .find(".total_donation_amount")
+      .text("$" + left_default_amount);
 
-        $(document).on('click','.selectPricing li',function(){
-            let el = '$' + $(this).data('amount');
-            price_right_parent.find('.total_donation_amount').text(el);
-            $('.left_default_amount').val($(this).data('amount'))
-        });
-
-    $(document).on('keyup','.left_default_amount ',function(){
-        let el = $(this).val();
-        price_right_parent.find('.total_donation_amount').text('$'+ el);
+    $(document).on("click", ".selectPricing li", function () {
+      let el = "$" + $(this).data("amount");
+      price_right_parent.find(".total_donation_amount").text(el);
+      $(".left_default_amount").val($(this).data("amount"));
     });
 
-    $(document).on('click','.payment-gateway-list .single-gateway-item',function(){
-        $('#slected_gateway_from_helper').val($(this).data('gateway'))
+    $(document).on("keyup", ".left_default_amount ", function () {
+      let el = $(this).val();
+      price_right_parent.find(".total_donation_amount").text("$" + el);
+    });
 
-        let gateway = $(this).data('gateway');
+    $(document).on(
+      "click",
+      ".payment-gateway-list .single-gateway-item",
+      function () {
+        $("#slected_gateway_from_helper").val($(this).data("gateway"));
 
-        if (gateway == 'manual_payment') {
-            $('.manual_payment_transaction_field').removeClass('d-none');
+        let gateway = $(this).data("gateway");
+
+        if (gateway == "manual_payment") {
+          $(".manual_payment_transaction_field").removeClass("d-none");
         } else {
-            $('.manual_payment_transaction_field').addClass('d-none');
+          $(".manual_payment_transaction_field").addClass("d-none");
         }
-    });
+      }
+    );
   });
-    
 })(jQuery);

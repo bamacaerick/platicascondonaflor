@@ -61,5 +61,38 @@
     .slick-list {
         margin: 0 -10px;
     }
+
+    .slick-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 1rem 0;
+      position: absolute;
+      bottom: -35px;
+      width: 100%;
+      list-style-type: none;
+      @media #{$xs-to-md-max} {
+        bottom: 10px;
+      }
+      li {
+        margin: 0 0.25rem;
+      }
+      button {
+        display: block;
+        width: 48px;
+        height: 6px;
+        padding: 0;
+        border: none;
+        border-radius: 10px;
+        background-color: white;
+        text-indent: -9999px;
+      }
+      .slick-active button {
+        width: 25px;
+        height: 6px;
+        background-color: var(--secondary);
+      }
+    }
   }
 }

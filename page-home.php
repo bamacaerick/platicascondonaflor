@@ -3,9 +3,9 @@
 get_header();
 ?>
 <main id="content" role="main">
-    <?php get_template_part('parts/banner'); ?>
+    <?php get_template_part('parts/home-banner'); ?>
 
-    <section class="about-area section-padding">
+    <section class="about-area my-5">
         <div class="container">
             <div class="row g-24 justify-content-between">
                 <div class="col-xl-7 col-lg-7">
@@ -66,15 +66,15 @@ get_header();
                 </div>
                 <div class="col-xl-5 col-lg-5">
                     <div class="position-absolute about-info-image">
-                        <img class="" src="<?php echo get_template_directory_uri(); ?>/images/about.png; ?>"
+                        <img class="" src="<?php echo get_template_directory_uri(); ?>/images/about.png"
                             alt="image">
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center py-5">
+            <div class="row justify-content-center pt-5">
                 <div class="col-8">
                     <div class="row">
-                        <div class="col-12 col-lg-6 p-3">
+                        <div class="col-12 col-lg-6 p-3 wow fadeInUp" data-wow-delay="0.4s">
                           <div class="about-info-card h-100 w-100 d-flex">
                             <div class="row align-items-center w-100">
                                 <div class="col-auto">
@@ -86,7 +86,7 @@ get_header();
                             </div>
                           </div>
                         </div>
-                        <div class="col-12 col-lg-6 p-3">
+                        <div class="col-12 col-lg-6 p-3 wow fadeInUp" data-wow-delay="0.4s">
                           <div class="about-info-card h-100 w-100 d-flex">
                             <div class="row align-items-center w-100">
                                 <div class="col-auto">
@@ -98,7 +98,7 @@ get_header();
                             </div>
                           </div>
                         </div>
-                        <div class="col-12 col-lg-6 p-3">
+                        <div class="col-12 col-lg-6 p-3 wow fadeInUp" data-wow-delay="0.4s">
                           <div class="about-info-card h-100 w-100 d-flex">
                             <div class="row align-items-center w-100">
                                 <div class="col-auto">
@@ -110,7 +110,7 @@ get_header();
                             </div>
                           </div>
                         </div>
-                        <div class="col-12 col-lg-6 p-3">
+                        <div class="col-12 col-lg-6 p-3 wow fadeInUp" data-wow-delay="0.4s">
                           <div class="about-info-card h-100 w-100 d-flex">
                             <div class="row align-items-center w-100">
                                 <div class="col-auto">
@@ -127,6 +127,10 @@ get_header();
             </div>
         </div>
     </section>
+
+    <?php get_template_part('parts/home-helpful'); ?>
+    <?php get_template_part('parts/home-testimonials'); ?>
+    <?php get_template_part('parts/home-galeria'); ?>
 
 </main>
 <?php get_footer(); ?>

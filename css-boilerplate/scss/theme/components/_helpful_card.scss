@@ -1,3 +1,4 @@
+
 .helpful-card {
   padding: 20px;
   border-radius: 10px;
@@ -5,20 +6,20 @@
   box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.15);
   @include transition(0.3s);
   &:hover {
-    background-color: var(--primary);
+    background-color: var(--secondary);
     cursor: pointer;
     .helpful-card-icon {
-      background-color: white;
+      background-color: white!important;
       i {
-        color: var(--primary);
+        color: var(--secondary);
       }
     }
     .helpful-card-caption {
       .caption-title {
-        color: white;
+        color: white!important;
       }
       .caption-para {
-        color: var(--info);
+        color: var(--white);
       }
     }
   }
@@ -30,10 +31,19 @@
     text-align: center;
     margin-bottom: 20px;
     border-radius: 50%;
-    background-color: var(--primary);
+    background-color: var(--pink);
     display: flex;
     justify-content: center;
     align-items: center;
+    .card-wrapper-two & {
+      background-color: var(--primary);
+    }
+    .card-wrapper-three & {
+      background-color: var(--blue);
+    }
+    .card-wrapper-four & {
+      background-color: var(--green);
+    }
     @media #{$xs} {
       min-width: 50px;
       max-width: 50px;
@@ -54,9 +64,18 @@
       font-size: 20px;
       font-style: normal;
       font-weight: 700;
-      color: var(--primary-title);
+      color: var(--pink);
       margin-bottom: 10px;
       line-height: 30px;
+      .card-wrapper-two & {
+        color: var(--primary);
+      }
+      .card-wrapper-three & {
+        color: var(--blue);
+      }
+      .card-wrapper-four & {
+        color: var(--green);
+      }
       @media #{$xs} {
         font-size: 16px;
       }

@@ -123,6 +123,19 @@ function generic_read_more_link()
         return ' <a href="' . esc_url(get_permalink()) . '" class="more-link">' . sprintf(__('...%s', 'generic'), '<span class="screen-reader-text">  ' . esc_html(get_the_title()) . '</span>') . '</a>';
     }
 }
+
+// Custom function to limit the excerpt by characters
+function custom_excerpt_length($excerpt) {
+    $limit = 100; // Set the character limit
+    if (strlen($excerpt) > $limit) {
+        $excerpt = substr($excerpt, 0, $limit) . '...';
+    }
+    return $excerpt;
+}
+
+// Apply the custom function to the excerpt
+add_filter('get_the_excerpt', 'custom_excerpt_length');
+
 add_filter('excerpt_more', 'generic_excerpt_read_more_link');
 function generic_excerpt_read_more_link($more)
 {
@@ -131,15 +144,16 @@ function generic_excerpt_read_more_link($more)
         return ' <a href="' . esc_url(get_permalink($post->ID)) . '" class="more-link">' . sprintf(__('...%s', 'generic'), '<span class="screen-reader-text">  ' . esc_html(get_the_title()) . '</span>') . '</a>';
     }
 }
-add_filter('big_image_size_threshold', '__return_false');
-add_filter('intermediate_image_sizes_advanced', 'generic_image_insert_override');
-function generic_image_insert_override($sizes)
+
+
+// Add custom image size
+function custom_theme_setup()
 {
-    unset($sizes['medium_large']);
-    unset($sizes['1536x1536']);
-    unset($sizes['2048x2048']);
-    return $sizes;
+    add_image_size('feature_blog_listing', 800, 600, true); // Width: 800px, Height: 600px, Crop: true
 }
+add_action('after_setup_theme', 'custom_theme_setup');
+
+
 add_action('widgets_init', 'generic_widgets_init');
 function generic_widgets_init()
 {

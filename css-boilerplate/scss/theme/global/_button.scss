@@ -4,7 +4,7 @@
 @each $btn-name, $btn-color in (primary, var(--primary-btn)),
   (secondary, var(--secondary-btn)), (tertiary, var(--tertiary-btn)),
   (light, $light-gray), (dark, $dark-color), ("", $dark-color),
-  (warning, $warning-color)
+  (warning, $warning-color), ("green", var(--green))
 {
   .btn-#{$btn-name}-fill {
     padding: 14px 30px;
@@ -13,7 +13,7 @@
     border: 1px solid transparent;
     font-size: 16px;
     font-weight: 700;
-    border-radius: 10px;
+    border-radius: 50px;
     text-align: center;
     cursor: pointer;
     display: inline-block;
@@ -24,14 +24,16 @@
       background: var(--primary-btn);
     }
 
-   
-
     @if ($btn-name == secondary) {
       background: var(--secondary-btn);
     }
 
     @if ($btn-name == tertiary) {
       background: var(--tertiary-btn);
+    }
+
+    @if ($btn-name == "green") {
+      background: var(--green);
     }
 
     @if ($btn-name == light) {
@@ -49,6 +51,10 @@
       @if ($btn-name == primary) {
         border: 1px solid var(--primary-btn);
         color: var(--primary-btn);
+      }
+      @if ($btn-name == "green") {
+        border: 1px solid var(--green);
+        color: var(--green);
       }
       @if ($btn-name == light) {
         background-color: var(--white);
@@ -101,8 +107,8 @@
 
 // Border button
 @each $btn-name, $btn-color in (primary, var(--primary-btn)),
-  (secondary, --secondary-btn), (tertiary, --tertiary-btn), (light, $light-gray),
-  (dark, $dark-color), (warning, $warning-color)
+  (secondary, var(--secondary-btn)), (tertiary, var(--tertiary-btn)), (light, $light-gray),
+  (dark, $dark-color), (warning, $warning-color), ("green", var(--green)), ("blue", var(--blue))
 {
   .btn-#{$btn-name}-outline {
     padding: 11px 22px;
@@ -110,7 +116,7 @@
     font-size: 18px;
     font-weight: 700;
     text-transform: capitalize;
-    border-radius: 10px;
+    border-radius: 50px;
     text-align: center;
     cursor: pointer;
     display: inline-block;
@@ -127,8 +133,14 @@
     }
     @if ($btn-name == tertiary) {
       color: var(--tertiary-btn);
-      border: 1px solid var(--tertiary-btn);
+      border: 1px solid #CCCDD3;
     }
+
+    @if ($btn-name == "blue") {
+      color: var(--blue);
+      border: 1px solid var(--blue);
+    }
+
 
     &:hover {
       color: var(--white);
@@ -139,6 +151,11 @@
       @if ($btn-name == secondary) {
         border: 1px solid var(--secondary-btn);
         background: var(--secondary-btn);
+      }
+      @if ($btn-name == "blue") {
+        color: var(--white);
+        border: 1px solid var(--blue);
+        background: var(--blue);
       }
       @if ($btn-name == tertiary) {
         border: 1px solid var(--tertiary-btn);

@@ -75,7 +75,7 @@
     <?php wp_body_open(); ?>
     <div id="wrapper" class="hfeed">
         <header>
-            <div class="header-area header-transparent">
+            <div class="header-area <?php echo is_page('home') ? "header-transparent" : "header-sticky";?>">
                 <div class="main-header header-sticky">
                     <div class="container">
                         <div class="row">

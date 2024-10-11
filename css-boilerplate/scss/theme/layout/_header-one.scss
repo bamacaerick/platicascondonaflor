@@ -54,6 +54,33 @@
               color: var(--primary);
             }
           }
+
+          @at-root body.single-post .menu-item-blog,
+            &.menu-item-blog {
+            .single {
+              color: var(--blue) !important;
+              &::before {
+                transition: 0.4s;
+                width: 100%;
+                height: 2px;
+                content: "";
+                position: absolute;
+                left: 0px;
+                bottom: 38px;
+                z-index: 0;
+                background: var(--blue);
+              }
+            }
+          }
+
+          &.menu-item-support {
+            .single {
+              color: var(--green);
+              &::before {
+                background: var(--green);
+              }
+            }
+          }
         }
         .single {
           @include transition(0.3s);
@@ -190,8 +217,6 @@
           display: block;
           font-size: 16px;
           text-transform: capitalize;
-
-          
         }
         a:hover {
           background: transparent;
