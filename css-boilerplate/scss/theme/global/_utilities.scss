@@ -1,0 +1,39 @@
+.text {
+    &-primary {
+        color: var(--primary)!important;
+
+        &-variant {
+            color: var(--primary-variant)!important;
+        }
+    }
+
+    &-secondary {
+        color: var(--secondary)!important;
+    }
+
+    &-green {
+        color: var(--green)!important;
+    }
+}
+
+.bg {
+    &-primary {
+        background-color: var(--primary)!important;
+
+        &-variant {
+            background-color: var(--primary-variant)!important;
+        }
+    }
+
+    &-secondary {
+        background-color: var(--secondary)!important;
+    }
+
+    &-green {
+        background-color: var(--green)!important;
+    }
+
+    &-blue {
+        background-color: var(--blue)!important;
+    }
+}
