@@ -5,7 +5,7 @@ get_header();
 <main id="content" role="main">
     <?php get_template_part('parts/home-banner'); ?>
 
-    <section class="about-area my-5">
+    <section class="about-area my-5" id="about-me">
         <div class="container">
             <div class="row g-24 justify-content-between">
                 <div class="col-xl-7 col-lg-7">
