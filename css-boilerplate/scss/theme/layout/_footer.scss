@@ -39,6 +39,7 @@
     .listing {
       display: flex;
     }
+    @at-root body.single-post .footer-menu .menu-item-blog, 
     .single-list.current-menu-item {
       .single {
         color: var(--secondary);
@@ -114,8 +115,21 @@
             border-radius: 5px;
             font-size: 14px;
           }
+          .project-post {
+            flex-direction: row;
+          }
           .project-img {
+            flex: 0 0 auto; // Prevent the image container from shrinking
+            width: 100px; 
             border-radius: 10px;
+            overflow: hidden;
+            height: 80px;
+           img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+
           }
           .project-info {
             .project-date {
@@ -130,14 +144,11 @@
               }
             }
             .project-title {
-              font-size: 20px;
+              font-size: 16px;
               font-style: normal;
               font-weight: 700;
-              line-height: 30px;
+              line-height: 120%;
               color: var(--white);
-              @media #{$xs-to-sm-max} {
-                font-size: 16px;
-              }
 
               a:hover {
                 color: var(--secondary);
