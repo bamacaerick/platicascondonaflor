@@ -44,7 +44,7 @@ get_header(); ?>
                                         <div class="divider-ver"></div>
                                         <div class="contact-content">
                                             <p class="subtitle">Email</p>
-                                            <a class="title" href="javascript:void(0)">platicascondonaflor@gmail.com</a>
+                                            <a class="title" href="mailto:platicascondonaflor@gmail.com">platicascondonaflor@gmail.com</a>
                                         </div>
                                     </div>
                                     <div class="contact-icon-list">
@@ -68,72 +68,10 @@ get_header(); ?>
                                     <div class="custom-form support-page">
                                         <?php the_content(); ?>
                                     </div>
-                                    <!-- <form action="#" class="custom-form support-page">
-                                        <div class="row">
-                                            <div class="col-xl-12">
-                                                <div class="form-group">
-                                                    <label class="custom-label text-green"
-                                                        for="exampleFormControlInput1">Full
-                                                        Name</label>
-                                                    <input type="text" class="form-control custom-input"
-                                                        id="exampleFormControlInput1" placeholder="Alex Jordan">
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-12">
-                                                <div class="row">
-                                                    <div class="col-12 col-lg-6">
-                                                        <div class="form-group">
-                                                            <label class="custom-label text-green"
-                                                                for="exampleFormControlInput5">Phone number</label>
-                                                            <input type="text" class="form-control custom-input"
-                                                                id="exampleFormControlInput5" placeholder="Phone">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 col-lg-6">
-                                                        <div class="form-group">
-                                                            <label class="custom-label text-green"
-                                                                for="exampleFormControlInput2">Email
-                                                                address</label>
-                                                            <input type="email" class="form-control custom-input"
-                                                                id="exampleFormControlInput2"
-                                                                placeholder="name@example.com">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-12">
-                                            <div class="form-group">
-                                                <label class="custom-label text-green">If you want to support the Latino
-                                                    community, select an option: </label>
-                                                <select class="form-control custom-input">
-                                                    <option value="0">I want to participate - As a guest in the program
-                                                        “Pláticas con Doña Flor”.</option>
-                                                    <option value="1">I want to sponsor - An episode of the program
-                                                        “Pláticas con Doña Flor”.</option>
-                                                    <option value="2">I want to hire -  The services of “Doña Flor”.
-                                                    </option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-12">
-                                            <div class="form-group">
-                                                <label class="custom-label text-green"
-                                                    for="exampleFormControlTextarea1">Message</label>
-                                                <textarea class="form-control custom-textarea"
-                                                    id="exampleFormControlTextarea1"
-                                                    placeholder="Type You message here"></textarea>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn-green-fill">Send Message</button>
-                                    </form> -->
                                 </div>
                             </div>
                             <div class="col-xl-6">
-                                <iframe class="map-frame"
-                                    src="https://www.google.com/maps/embed/v1/place?q=Dhaka,+Bangladesh&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
-                                    width="600" height="450" style="border: 15px" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <img class="img-fluid w-100" src="<?php echo get_template_directory_uri(); ?>/images/support-image.png'); ?>" alt="">
                             </div>
                         </div>
                     </div>

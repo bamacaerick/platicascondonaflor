@@ -11789,7 +11789,7 @@ textarea.form-control-lg {
   --info: #0dcaf0;
   --body: #ffffff;
   --pink: #FF7087;
-  --blue: #08B6CB;
+  --blue: #11cdef;
   --green: #7BC70F;
   --primary:#6E2995;
   --primary-variant: #3A3087;
@@ -27978,6 +27978,10 @@ input[type=number] {
   background-color: var(--white) !important;
 }
 
+.wp-pagenavi .pages {
+  display: none;
+}
+
 @media (max-width: 991px) {
   .header-area {
     background: var(--white);
@@ -29362,6 +29366,137 @@ body.single-post .menu-item-blog .single::before, .header-area .main-menu .listi
   }
 }
 
+.pagination-nav,
+.wp-pagenavi {
+  margin-top: 60px;
+}
+.pagination-nav .pagination,
+.wp-pagenavi .pagination {
+  gap: 10px;
+}
+.pagination-nav .pagination .page-item,
+.wp-pagenavi .pagination .page-item {
+  position: relative;
+}
+.pagination-nav .pagination .page-item .page-link,
+.wp-pagenavi .pagination .page-item .page-link {
+  width: 50px;
+  min-width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-title);
+  font-size: 18px;
+  font-weight: 400;
+  border: 1px solid var(--primary-gray);
+}
+@media (max-width: 575px) {
+  .pagination-nav .pagination .page-item .page-link,
+  .wp-pagenavi .pagination .page-item .page-link {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+.pagination-nav .pagination .page-item .page-link:hover,
+.wp-pagenavi .pagination .page-item .page-link:hover {
+  background-color: var(--blue);
+  border: 1px solid transparent;
+  color: var(--white);
+}
+.pagination-nav .pagination .page-item .page-link:hover i,
+.wp-pagenavi .pagination .page-item .page-link:hover i {
+  color: var(--white);
+}
+.pagination-nav .pagination .page-item .page-link.next,
+.wp-pagenavi .pagination .page-item .page-link.next {
+  width: 70px;
+  height: 50px;
+  border-radius: 30px;
+}
+@media (max-width: 575px) {
+  .pagination-nav .pagination .page-item .page-link.next,
+  .wp-pagenavi .pagination .page-item .page-link.next {
+    width: 60px;
+    height: 40px;
+  }
+}
+.pagination-nav .pagination .page-item .page-link.active,
+.wp-pagenavi .pagination .page-item .page-link.active {
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+}
+
+.wp-pagenavi {
+  position: relative;
+  gap: 10px;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}
+.wp-pagenavi span,
+.wp-pagenavi a {
+  width: 50px;
+  min-width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-title);
+  font-size: 18px;
+  font-weight: 400;
+  border: 1px solid var(--primary-gray);
+}
+@media (max-width: 575px) {
+  .wp-pagenavi span,
+  .wp-pagenavi a {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+.wp-pagenavi span:hover,
+.wp-pagenavi a:hover {
+  background-color: var(--blue);
+  border: 1px solid transparent;
+  color: var(--white);
+}
+.wp-pagenavi span:hover i,
+.wp-pagenavi a:hover i {
+  color: var(--white);
+}
+.wp-pagenavi span.nextpostslink,
+.wp-pagenavi a.nextpostslink {
+  width: 70px;
+  height: 50px;
+  border-radius: 30px;
+}
+@media (max-width: 575px) {
+  .wp-pagenavi span.nextpostslink,
+  .wp-pagenavi a.nextpostslink {
+    width: 60px;
+    height: 40px;
+  }
+}
+.wp-pagenavi span.current,
+.wp-pagenavi a.current {
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+}
+
+.page-link:focus {
+  box-shadow: none;
+}
+
 .contact-section {
   border-radius: 10px;
   background-color: vaar(--white);
@@ -29437,6 +29572,7 @@ body.single-post .menu-item-blog .single::before, .header-area .main-menu .listi
 }
 
 .send-box {
+  height: 100%;
   border-radius: 15px;
   padding: 30px;
   background: var(--white);
@@ -29489,9 +29625,14 @@ body.single-post .menu-item-blog .single::before, .header-area .main-menu .listi
   }
 }
 .single-blog .blog-info-title .info,
+.single-blog .blog-info-title .info-hiperlink,
 .single-blog .blog-info-title i {
   color: var(--tertiary-title);
   font-size: 14px;
+}
+.single-blog .blog-info-title .info-hiperlink:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 .single-blog .blog-info-title .title {
   font-size: 20px;
