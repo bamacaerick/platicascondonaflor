@@ -50,7 +50,16 @@
         clearInterval(i);
       }
     }, 10);
+
+    $(".info-toggle").on("click", function () { 
+      $(this).toggleClass("active");
+      $(this)
+        .closest(".title")
+        .next(".info-toggle-content")
+        .slideToggle("fast");
+    });
   });
+
 
   /*-----------------------------------
     Sticky And Scroll Up

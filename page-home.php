@@ -25,19 +25,21 @@ get_header();
                                         <i class="ri-hand-heart-line text-primary-variant"></i>
                                     </div>
                                     <div class="info-content">
-                                        <h4 class="title text-primary-variant">My journey and contributions</h4>
-                                        <p class="pera">With over 20 years in social work and psychotherapy, I have
-                                            worked at Johns Hopkins Bayview, St. Vincent de Paul, House of Ruth
-                                            Maryland, and CASA Maryland.
-                                        </p><br>
-                                        <p class="pera">
-                                            Currently, I am an Independent Provider at AYNI, LLC, focusing on community
-                                            well-being.</p>
+                                        <h4 class="title"><button class="info-toggle text-primary-variant">My journey and contributions</button></h4>
+                                        <div class="info-toggle-content">
+                                            <p class="pera">With over 20 years in social work and psychotherapy, I have
+                                                worked at Johns Hopkins Bayview, St. Vincent de Paul, House of Ruth
+                                                Maryland, and CASA Maryland.
+                                            </p><br>
+                                            <p class="pera">
+                                                Currently, I am an Independent Provider at AYNI, LLC, focusing on community
+                                                well-being.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-10">
-                                <div class="divider"></div>
+                                <div class="py-3"></div>
                             </div>
                             <div class="col-lg-10 mb-20">
                                 <div class="d-flex gap-20">
@@ -46,18 +48,20 @@ get_header();
                                     </div>
 
                                     <div class="info-content">
-                                        <h4 class="title text-primary-variant">Join Our Team</h4>
-                                        <ul class="pera">
-                                            <li>President of the Hispanic Commission of the Baltimore City Mayor's
-                                                Office.</li>
-                                            <li>Board Member of the Maryland State Community Health Resources
-                                                Commission.</li>
-                                            <li>Board Member of the Maryland Mental Health Association.</li>
-                                            <li>Affiliate of the Latino Providers Network.</li>
-                                            <li>Member of the Maryland Social Workers Association.</li>
-                                            <li>Member of the National Association of Social Workers.</li>
-                                            <li>Member of the Clinical Scholars Alumni Network.</li>
-                                        </ul>
+                                        <h4 class="title"><button class="info-toggle text-primary-variant">Join Our Team</button></h4>
+                                        <div class="info-toggle-content">
+                                            <ul class="pera">
+                                                <li>President of the Hispanic Commission of the Baltimore City Mayor's
+                                                    Office.</li>
+                                                <li>Board Member of the Maryland State Community Health Resources
+                                                    Commission.</li>
+                                                <li>Board Member of the Maryland Mental Health Association.</li>
+                                                <li>Affiliate of the Latino Providers Network.</li>
+                                                <li>Member of the Maryland Social Workers Association.</li>
+                                                <li>Member of the National Association of Social Workers.</li>
+                                                <li>Member of the Clinical Scholars Alumni Network.</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +75,7 @@ get_header();
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center pt-5">
+            <div class="row justify-content-center pt-5 about-cards-content">
                 <div class="col-8">
                     <div class="row">
                         <div class="col-12 col-lg-6 p-3 wow fadeInUp" data-wow-delay="0.4s">
