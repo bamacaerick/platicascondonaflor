@@ -65,12 +65,17 @@
                   <div class="another-blog-info">
                     <div class="d-flex res-flex justify-content-between align-items-center">
                       <div class="imp-btn flex align-items-center">
-                        <div class="badge active">
-                          <p class="subtitle">medical</p>
-                        </div>
-                        <div class="badge">
-                          <p class="subtitle">Food</p>
-                        </div>
+                        <?php $categories = get_the_category();
+                          if (! empty($categories)) {
+                              $category_links = array();
+                              foreach ($categories as $category) {
+                                  $category_links[] = '<a class="bg-blue badge active me-2" href="' . esc_url(get_category_link($category->term_id)) . '"><span class="subtitle">' . esc_html($category->name) . '</span></a>';
+                              }
+                              echo '<div class="categories">';
+                              echo implode('', $category_links);
+                              echo '</div>';
+                          }?>
+                        
                       </div>
                       <div class="share-link align-items-center">
                         <p class="title">share:</p>
@@ -91,6 +96,17 @@
                       </div>
                     </div>
                   </div>
+                  
+                  <!-- Navigation Section -->
+                   <div class="post-navigation row justify-content-between">
+                    <div class="previous-post col-4">
+                      <?php previous_post_link('%link', 'Previous'); ?>
+                    </div>
+                    <div class="next-post col-4 text-end">
+                      <?php next_post_link('%link', 'Next'); ?>
+                    </div>
+                  </div>
+                  
                 </div>
               </div>
             </div>

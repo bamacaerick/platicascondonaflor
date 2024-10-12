@@ -29271,6 +29271,59 @@ body.single-post .footer-menu .menu-item-blog .single,
   animation-name: fadeInUp;
 }
 
+.post-navigation {
+  border: 1px solid #CCCDD3;
+  border-radius: 15px;
+  padding: 20px 20px 15px 20px;
+}
+.post-navigation .previous-post a,
+.post-navigation .next-post a {
+  color: #090E0D;
+  display: inline-block;
+  position: relative;
+  vertical-align: bottom;
+  line-height: 30px;
+}
+.post-navigation .previous-post a:hover::before, .post-navigation .previous-post a:hover::after,
+.post-navigation .next-post a:hover::before,
+.post-navigation .next-post a:hover::after {
+  background-color: var(--primary);
+}
+.post-navigation .previous-post a {
+  padding-left: 50px;
+}
+.post-navigation .previous-post a:before {
+  content: "";
+  background-image: url("./images/icons/previous-icon.svg");
+  background-size: 16px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: var(--blue);
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+}
+.post-navigation .next-post a {
+  padding-right: 50px;
+}
+.post-navigation .next-post a:after {
+  content: "";
+  background-image: url("./images/icons/next-icon.svg");
+  background-size: 16px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: var(--blue);
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+}
+
 .breadcrumb-bg {
   background: var(--green);
   position: relative;
