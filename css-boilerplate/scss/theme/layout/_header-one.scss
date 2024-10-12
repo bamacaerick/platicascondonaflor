@@ -55,7 +55,7 @@
             }
           }
 
-          @at-root body.single-post .menu-item-blog,
+          @at-root body.single-post .header-area .menu-item-blog,
             &.menu-item-blog {
             .single {
               color: var(--blue) !important;

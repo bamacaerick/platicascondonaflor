@@ -39,6 +39,7 @@
     .listing {
       display: flex;
     }
+    @at-root body.single-post .footer-menu .menu-item-blog, 
     .single-list.current-menu-item {
       .single {
         color: var(--secondary);
