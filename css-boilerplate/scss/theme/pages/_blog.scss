@@ -33,9 +33,14 @@
       margin-top: 10px;
     }
     .info,
+    .info-hiperlink,
     i {
       color: var(--tertiary-title);
       font-size: 14px;
+    }
+    .info-hiperlink:hover {
+      text-decoration: underline;
+      cursor: pointer;
     }
     .title {
       font-size: 20px;

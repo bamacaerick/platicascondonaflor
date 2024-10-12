@@ -64,7 +64,16 @@ get_header();
                                     <div class="flex mb-15 gap-16 align-items-center">
                                         <div class="donate flex gap-10 align-items-center">
                                             <i class="ri-chat-3-line"></i>
-                                            <p class="info">Donation</p>
+                                            <?php
+                                                $categories = get_the_category();
+                                                if (! empty($categories)) {
+                                                    $category_links = array();
+                                                    foreach ($categories as $category) {
+                                                        $category_links[] = '<a class="info-hiperlink" href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
+                                                    }
+                                                    echo '<p class="info">' . implode(', ', $category_links) . '</p>';
+                                                }
+                                            ?>
                                         </div>
                                     </div>
                                     <h4 class="title text-capitalize"><a href="<?php the_permalink(); ?>" class="text-blue"><?php the_title(); ?></a></h4>
@@ -81,20 +90,6 @@ get_header();
                     wp_reset_query();
                     ?>
             </div>
-            <!-- pagination -->
-            <nav class="pagination-nav">
-                <ul class="pagination">
-                    <li class="page-item" aria-current="page"><span class="page-link active">1</span></li>
-                    <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
-                    <li class="page-item">
-                        <a class="page-link next" href="javascript:void(0)" rel="next" aria-label="Next »"><i
-                                class="ri-arrow-right-line"></i></a>
-                    </li>
-                </ul>
-            </nav>
-            <!-- End pagination -->
         </div>
     </section>
     <!-- End-of Blog -->
