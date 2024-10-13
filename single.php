@@ -186,31 +186,6 @@
                     </div>
                   </div>
                 </div>
-
-                <!-- User Box -->
-                <div class="user-box">
-                  <div class="user-img mx-auto">
-                    <img src="assets/images/gallery/user.png" alt="img">
-                  </div>
-                  <div class="user-info text-center">
-                    <h4 class="title">Jonny Sophia</h4>
-                    <p class="pera">Hi! beautiful people. I`m the author of this blog.</p>
-                  </div>
-                  <div class="social-link justify-content-center">
-                    <div class="social-icon active">
-                      <a href="javascript:void(0)"><i class="ri-facebook-fill"></i></a>
-                    </div>
-                    <div class="social-icon">
-                      <a href="javascript:void(0)"><i class="ri-twitter-fill"></i></a>
-                    </div>
-                    <div class="social-icon">
-                      <a href="javascript:void(0)"><i class="ri-linkedin-fill"></i></a>
-                    </div>
-                    <div class="social-icon">
-                      <a href="javascript:void(0)"><i class="ri-instagram-fill"></i></a>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
