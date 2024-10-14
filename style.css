@@ -4,7 +4,7 @@ Theme Name: Platicas con Dona Flor
 Author: Erick Bamaca @bamacaerick for custom design integration | Bryan Hadaway for core base | Estudio Dual for design
 Description: A fully responsive, SEO-friendly, Schema-ready, Accessibility-ready, based on Bootstrap 5.1 Grid and utilities.
 Tags: accessibility-ready, one-column, two-columns, right-sidebar, custom-logo, custom-menu, featured-images, microformats, sticky-post, threaded-comments, translation-ready, blog, e-commerce, portfolio
-Version: 1.0.2
+Version: 1.0.4
 Requires PHP: 7.0
 */
 /*!
@@ -28358,19 +28358,22 @@ body.single-post .header-area .menu-item-blog .single::before, .header-area .mai
     line-height: 35px;
   }
 }
-.hero-caption .pera {
+.hero-caption .pera,
+.hero-caption .pera p {
   font-size: 16px;
   display: block;
   margin-bottom: 30px;
   color: var(--hero-two-subtitle);
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .hero-caption .pera {
+  .hero-caption .pera,
+  .hero-caption .pera p {
     font-size: 14px;
   }
 }
 @media (max-width: 575px) {
-  .hero-caption .pera {
+  .hero-caption .pera,
+  .hero-caption .pera p {
     font-size: 12px;
   }
 }
@@ -28622,6 +28625,22 @@ body.single-post .footer-menu .menu-item-blog .single,
   z-index: 5;
 }
 
+.about-info .para,
+.about-info .para p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  color: var(--tertiary-title);
+}
+@media (max-width: 991px) {
+  .about-info .para,
+  .about-info .para p {
+    font-size: 14px;
+  }
+}
+.about-info .para p {
+  margin-bottom: 15px;
+}
 .about-info .info-icon {
   min-width: 52px;
   max-width: 52px;
@@ -28673,16 +28692,21 @@ body.single-post .footer-menu .menu-item-blog .single,
     font-size: 16px;
   }
 }
-.about-info .info-content .para {
+.about-info .info-content .para,
+.about-info .info-content .para p {
   font-size: 16px;
   font-weight: 400;
   line-height: 25px;
   color: var(--tertiary-title);
 }
 @media (max-width: 991px) {
-  .about-info .info-content .para {
+  .about-info .info-content .para,
+  .about-info .info-content .para p {
     font-size: 14px;
   }
+}
+.about-info .info-content .para p {
+  margin-bottom: 15px;
 }
 .about-info .divider {
   margin-top: 22px;
@@ -29045,6 +29069,12 @@ body.single-post .footer-menu .menu-item-blog .single,
   border-radius: 10px;
   height: 100%;
 }
+.testimonial-section-three .section-tittle .pera,
+.testimonial-section-three .section-tittle .pera p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--tertiary-title);
+}
 .testimonial-section-three .position-card {
   position: absolute;
   top: 20%;
@@ -29074,7 +29104,8 @@ body.single-post .footer-menu .menu-item-blog .single,
     font-size: 14px;
   }
 }
-.testimonial-section-three .position-card .single-testimonial-three .pera {
+.testimonial-section-three .position-card .single-testimonial-three .pera,
+.testimonial-section-three .position-card .single-testimonial-three .pera p {
   font-size: 16px;
   font-weight: 400;
   color: var(--tertiary-title);
@@ -30562,4 +30593,122 @@ body.single-post .footer-menu .menu-item-blog .single,
   height: 5px;
   width: 60%;
   background-color: var(--primary-gray);
+}
+
+/**
+ * 8.0 Alignments
+ */
+.wp_editor_content .post__title {
+  color: #475529;
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.wp_editor_content ol {
+  list-style-type: decimal;
+}
+
+.wp_editor_content ul,
+.wp_editor_content ol {
+  padding-left: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  line-height: 130%;
+}
+
+.wp_editor_content ul li,
+.wp_editor_content ol li {
+  line-height: 130%;
+  margin-bottom: 2px;
+}
+
+.wp_editor_content ul li {
+  list-style-type: disc;
+}
+
+.wp_editor_content a {
+  color: #000000;
+  font-weight: bold;
+}
+.wp_editor_content a:hover {
+  text-decoration: underline;
+}
+
+.wp_editor_content p {
+  margin-bottom: 20px;
+  line-height: 140%;
+  text-align: left;
+}
+
+.wp_editor_content strong {
+  font-weight: bold;
+}
+
+.wp_editor_content em {
+  font-style: italic;
+}
+
+.alignleft {
+  display: inline;
+  float: left;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+}
+
+.aligncenter {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "“" "”" "‘" "’";
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
+}
+
+blockquote.alignleft,
+.wp-caption.alignleft,
+img.alignleft {
+  margin: 0.4em 1.6em 1.6em 0;
+}
+
+blockquote.alignright,
+.wp-caption.alignright,
+img.alignright {
+  margin: 0.4em 0 1.6em 1.6em;
+}
+
+blockquote.aligncenter,
+.wp-caption.aligncenter,
+img.aligncenter {
+  clear: both;
+  margin-top: 0.4em;
+  margin-bottom: 1.6em;
+}
+
+.wp-caption.alignleft,
+.wp-caption.alignright,
+.wp-caption.aligncenter {
+  margin-bottom: 1.2em;
 }

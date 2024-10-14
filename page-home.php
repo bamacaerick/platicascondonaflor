@@ -5,19 +5,28 @@ get_header();
 <main id="content" role="main">
     <!-- Banner content -->
     <?php get_template_part('parts/home-banner'); ?>
+<?php 
+    $query_history = new WP_Query( array( 'pagename' => 'home' ) ); 
+?>
+
+ <?php if ($query_history->have_posts()): ?>
+ <?php while ($query_history->have_posts()): $query_history->the_post(); ?>
 
     <!-- Home content -->
     <section class="about-area my-5" id="about-me">
         <div class="container">
             <div class="row g-24 justify-content-between">
                 <div class="col-xl-7 col-lg-7">
-                    <div class="section-tittle mb-50">
-                        <span class="sub-tittle text-capitalize font-700 text-secondary">Learn more about me...</span>
-                        <h2 class="title mb-20 font-700 text-primary-variant">“Inspiring, educating, and empowering the
-                            Latinx community”</h2>
-                        <p class="pera">When deciding which charity to donate to, it's important to do your e search and
-                            find one that aligns with your values and interests. Look for charities that are transparent
-                            preventable diseases,</p>
+                    <div class="section-tittle mb-50 about-info">
+                        <span class="sub-tittle text-capitalize font-700 text-secondary wp_editor_content">
+                            <?php the_field('legend_about_me'); ?>
+                        </span>
+                        <h2 class="title mb-20 font-700 text-primary-variant">
+                            <?php the_field('principal_title'); ?>
+                        </h2>
+                        <div class="para wp_editor_content">
+                            <?php the_field('principal_content'); ?>
+                        </div>
                     </div>
                     <div class="about-info">
                         <div class="row">
@@ -27,15 +36,16 @@ get_header();
                                         <i class="ri-hand-heart-line text-primary-variant"></i>
                                     </div>
                                     <div class="info-content">
-                                        <h4 class="title"><button class="info-toggle text-primary-variant">My journey and contributions</button></h4>
+                                        <h4 class="title">
+                                            <button class="info-toggle text-primary-variant fw-bold">
+                                                <?php the_field('first_title_section'); ?>    
+                                            </button>
+                                        </h4>
                                         <div class="info-toggle-content">
-                                            <p class="pera">With over 20 years in social work and psychotherapy, I have
-                                                worked at Johns Hopkins Bayview, St. Vincent de Paul, House of Ruth
-                                                Maryland, and CASA Maryland.
-                                            </p><br>
-                                            <p class="pera">
-                                                Currently, I am an Independent Provider at AYNI, LLC, focusing on community
-                                                well-being.</p>
+                                            <div class="pera wp_editor_content">
+                                                <?php the_field('first_content_section'); ?>
+                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -50,19 +60,13 @@ get_header();
                                     </div>
 
                                     <div class="info-content">
-                                        <h4 class="title"><button class="info-toggle text-primary-variant">Join Our Team</button></h4>
+                                        <h4 class="title"><button class="info-toggle text-primary-variant fw-bold">
+                                            <?php the_field('second_title_section'); ?>
+                                        </button></h4>
                                         <div class="info-toggle-content">
-                                            <ul class="pera">
-                                                <li>President of the Hispanic Commission of the Baltimore City Mayor's
-                                                    Office.</li>
-                                                <li>Board Member of the Maryland State Community Health Resources
-                                                    Commission.</li>
-                                                <li>Board Member of the Maryland Mental Health Association.</li>
-                                                <li>Affiliate of the Latino Providers Network.</li>
-                                                <li>Member of the Maryland Social Workers Association.</li>
-                                                <li>Member of the National Association of Social Workers.</li>
-                                                <li>Member of the Clinical Scholars Alumni Network.</li>
-                                            </ul>
+                                            <div class="pera wp_editor_content">
+                                                <?php the_field('section_content_section') ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -87,7 +91,9 @@ get_header();
                                   <img src="<?php echo get_template_directory_uri(); ?>/images/icons/card-one-icon.png; ?>" alt="">
                                 </div>
                                 <div class="col">
-                                    <p class="about-info-card-text text-primary-variant fw-bold text-center">LCSW-C Licensed Clinical Social Worker-Clinical, MD</p>
+                                    <p class="about-info-card-text text-primary-variant fw-bold text-center">
+                                    <?php the_field('first_title_card') ?>
+                                    </p>
                                 </div>
                             </div>
                           </div>
@@ -99,7 +105,9 @@ get_header();
                                   <img src="<?php echo get_template_directory_uri(); ?>/images/icons/card-two-icon.png; ?>" alt="">
                                 </div>
                                 <div class="col">
-                                    <p class="about-info-card-text text-primary-variant fw-bold text-center">Approved Supervisor by the Maryland Board of Social Work Examiners</p>
+                                    <p class="about-info-card-text text-primary-variant fw-bold text-center">
+                                        <?php the_field('second_title_card') ?>
+                                    </p>
                                 </div>
                             </div>
                           </div>
@@ -111,7 +119,9 @@ get_header();
                                   <img src="<?php echo get_template_directory_uri(); ?>/images/icons/card-three-icon.png; ?>" alt="">
                                 </div>
                                 <div class="col">
-                                    <p class="about-info-card-text text-primary-variant fw-bold text-center">Certified Interpreter for the Courts in Maryland – Spanish/English</p>
+                                    <p class="about-info-card-text text-primary-variant fw-bold text-center">
+                                        <?php the_field('third_title_card') ?>
+                                    </p>
                                 </div>
                             </div>
                           </div>
@@ -123,7 +133,9 @@ get_header();
                                   <img src="<?php echo get_template_directory_uri(); ?>/images/icons/card-four-icon.png; ?>" alt="">
                                 </div>
                                 <div class="col">
-                                    <p class="about-info-card-text text-primary-variant fw-bold text-center">Notary Public</p>
+                                    <p class="about-info-card-text text-primary-variant fw-bold text-center">
+                                        <?php the_field('Fourth_card_titles') ?>
+                                    </p>
                                 </div>
                             </div>
                           </div>
@@ -133,13 +145,16 @@ get_header();
             </div>
         </div>
     </section>
-
+  
     <!-- Cards content -->
     <?php get_template_part('parts/home-helpful'); ?>
     <!-- Podcasst content -->
     <?php get_template_part('parts/home-testimonials'); ?>
     <!-- Latest episodes content -->
     <?php get_template_part('parts/home-galeria'); ?>
+  <?php endwhile; ?>
+ <?php endif; ?>
+ <?php wp_reset_postdata(); ?>
 
 </main>
 <?php get_footer(); ?>

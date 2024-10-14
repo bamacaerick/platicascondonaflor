@@ -3,7 +3,7 @@ Theme Name: Platicas con Dona Flor
 Author: Erick Bamaca @bamacaerick for custom design integration | Bryan Hadaway for core base | Estudio Dual for design
 Description: A fully responsive, SEO-friendly, Schema-ready, Accessibility-ready, based on Bootstrap 5.1 Grid and utilities.
 Tags: accessibility-ready, one-column, two-columns, right-sidebar, custom-logo, custom-menu, featured-images, microformats, sticky-post, threaded-comments, translation-ready, blog, e-commerce, portfolio
-Version: 1.0.2
+Version: 1.0.4
 Requires PHP: 7.0
 */
 
@@ -19,3 +19,4 @@ Requires PHP: 7.0
 @import 'theme/components/index';
 @import 'theme/sections/index';
 @import 'theme/pages/index';
+@import 'wpeditor';

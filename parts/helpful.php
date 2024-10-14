@@ -7,8 +7,8 @@
                               <i class="ri-hand-heart-line"></i>
                           </div>
                           <div class="helpful-card-caption">
-                              <h4 class="caption-title"><?php the_field('first_card_title') ?></h4>
-                              <p class="caption-para"><?php the_field('first_card_content') ?></p>
+                              <h4 class="caption-title">One on one counselor</h4>
+                              <p class="caption-para">Counselor in the Latin community on different social issues.</p>
                           </div>
                       </div>
                   </div>
@@ -18,8 +18,9 @@
                               <i class="ri-group-line"></i>
                           </div>
                           <div class="helpful-card-caption">
-                              <h4 class="caption-title"><?php the_field('second_card_title') ?></h4>
-                              <p class="caption-para"><?php the_field('second_card_content') ?></p>
+                              <h4 class="caption-title">Community Group Facilitator</h4>
+                              <p class="caption-para">Support for women, families, and groups facing violence and mental
+                                  health issues.</p>
                           </div>
                       </div>
                   </div>
@@ -29,8 +30,8 @@
                               <i class="ri-heart-3-line"></i>
                           </div>
                           <div class="helpful-card-caption">
-                              <h4 class="caption-title"><?php the_field('third_card_title') ?></h4>
-                              <p class="caption-para"><?php the_field('third_card_content') ?></p>
+                              <h4 class="caption-title">Consultant</h4>
+                              <p class="caption-para">Individual and group support within the Baltimore community.</p>
                           </div>
                       </div>
                   </div>
@@ -40,8 +41,9 @@
                               <i class="ri-star-line"></i>
                           </div>
                           <div class="helpful-card-caption">
-                              <h4 class="caption-title"><?php the_field('fourth_card_title') ?></h4>
-                              <p class="caption-para"><?php the_field('fourth_card_content') ?></p>
+                              <h4 class="caption-title">Trainer of community workers</h4>
+                              <p class="caption-para">Training and support for providers working with the Latinx
+                                  community.</p>
                           </div>
                       </div>
                   </div>

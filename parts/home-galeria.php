@@ -1,32 +1,35 @@
 <div class="gallery-area pb-5 mb-5 podcast-gallery">
     <h3 class="text-center text-primary-variant mb-5 fw-bold">Latest episodes</h3>
     <div class="gallery-slider d-flex">
-        <div class="gallery-img podcast-gallery-slide">
-            <a href="#">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/podcast-1.png" alt="img">
-                <div class="podcast-gallery-data wow">
-                    <h4 class="podcast-gallery-data-episode text-uppercase">Ep. 12 - Con Susana Roncal</h4>
-                    <p class="podcast-gallery-data-title text-uppercase">Aprendiendo a llevar dominar las emociones</p>
+        <?php
+        $args = array(
+            'post_type' => 'podcast', // Nombre del custom post type
+            'posts_per_page' => -1,    // Número de posts a traer (-1 para todos)
+        );
+
+        $podcasts_query = new WP_Query($args);
+
+        if ($podcasts_query->have_posts()) :
+            while ($podcasts_query->have_posts()) : $podcasts_query->the_post(); ?>
+                <div class="gallery-img podcast-gallery-slide">
+                    <a href="<?php the_field('link_to_podcast'); ?>">
+                        <img src="<?php echo$featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="img">
+                        <div class="podcast-gallery-data wow">
+                            <h4 class="podcast-gallery-data-episode text-uppercase"><?php the_title(); ?></h4>
+                            <p class="podcast-gallery-data-title text-uppercase">
+                                <?php the_field('legend_-_podcast'); ?>
+                            </p>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-        <div class="gallery-img podcast-gallery-slide">
-            <a href="">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/podcast-2.png" alt="img">
-                <div class="podcast-gallery-data wow">
-                    <h4 class="podcast-gallery-data-episode text-uppercase">Ep. 13 - Con María Fernanda</h4>
-                    <p class="podcast-gallery-data-title text-uppercase">Especial día de las madres</p>
-                </div>
-            </a>
-        </div>
-        <div class="gallery-img podcast-gallery-slide">
-            <a href="#">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/podcast-3.png" alt="img">
-                <div class="podcast-gallery-data wow">
-                    <h4 class="podcast-gallery-data-episode text-uppercase">Ep. 14 - Con Josefina del Águila</h4>
-                    <p class="podcast-gallery-data-title text-uppercase">Menopausia temprana</p>
-                </div>
-            </a>
-        </div>
+        <?php endwhile;
+            else :
+                echo 'No podcasts available.';
+            endif;
+            wp_reset_postdata();
+        ?>
+
     </div>
 </div>
+
+

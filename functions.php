@@ -133,6 +133,98 @@ function custom_excerpt_length($excerpt) {
     return $excerpt;
 }
 
+
+/**COODIGO PEROSONALIZADOOOOOOOOOOOOOOO */
+add_action('init', 'themePostTypes');
+
+function themePostTypes()
+{
+  
+    $banner = array(
+            'name' => _x('Banner', 'post type general name'),
+            'singular_name' => _x('Banner', 'post type singular name'),
+            'add_new' => _x('Añadir Nuevo', 'Banner'),
+            'add_new_item' => __('Añadir Nuevo Banner'),
+            'edit_item' => __('Editar Banner'),
+            'new_item' => __('Añadir Banner'),
+            'view_item' => __('Ver Banner'),
+            'search_items' => __('Buscar Banner'),
+            'not_found' =>  __('Banner no existente.'),
+            'not_found_in_trash' => __('No se encontraron Banners en la papelera.'),
+            'parent_item_colon' => '',
+            'menu_name' => 'Banner'
+        );
+
+    register_post_type(
+        'Banner',
+        array('labels' => $banner,
+            'description' => 'Banner',
+            'publicly_queryable' => true,
+            'public' => true,
+            'show_ui' => true,
+            'hierarchical' => true, // like posts
+            'supports' => array(
+                'title',
+                'page-attributes',
+                'editor',
+                'thumbnail',
+            ),
+        )
+    );
+
+}
+
+
+
+/****PODCAST POSTYPE*7 */
+function create_podcast_post_type() {
+    $labels = array(
+        'name'                  => _x('Podcasts', 'Post type general name'),
+        'singular_name'         => _x('Podcast', 'Post type singular name'),
+        'menu_name'             => _x('Podcasts', 'Admin Menu text'),
+        'name_admin_bar'        => _x('Podcast', 'Add New on Toolbar'),
+        'add_new'               => __('Add New Podcast'),
+        'add_new_item'          => __('Add New Podcast'),
+        'new_item'              => __('New Podcast'),
+        'edit_item'             => __('Edit Podcast'),
+        'view_item'             => __('View Podcast'),
+        'all_items'             => __('All Podcasts'),
+        'search_items'          => __('Search Podcasts'),
+        'parent_item_colon'     => __('Parent Podcasts:'),
+        'not_found'             => __('No podcasts found.'),
+        'not_found_in_trash'    => __('No podcasts found in Trash.'),
+        'featured_image'        => _x('Podcast Cover Image', 'Overrides the “Featured Image” phrase for this post type.'),
+        'set_featured_image'    => _x('Set cover image', 'Overrides the “Set featured image” phrase.'),
+        'remove_featured_image' => _x('Remove cover image', 'Overrides the “Remove featured image” phrase.'),
+        'use_featured_image'    => _x('Use as cover image', 'Overrides the “Use as featured image” phrase.'),
+        'archives'              => __('Podcast archives'),
+        'insert_into_item'      => __('Insert into podcast'),
+        'uploaded_to_this_item' => __('Uploaded to this podcast'),
+        'filter_items_list'     => __('Filter podcasts list'),
+        'items_list_navigation' => __('Podcasts list navigation'),
+        'items_list'            => __('Podcasts list'),
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array('slug' => 'podcast'),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 5,
+        'supports'           => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),
+        'show_in_rest'       => true,
+    );
+
+    register_post_type('podcast', $args);
+}
+
+add_action('init', 'create_podcast_post_type');
 // Apply the custom function to the excerpt
 add_filter('get_the_excerpt', 'custom_excerpt_length');
 
