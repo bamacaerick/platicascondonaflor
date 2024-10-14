@@ -5,6 +5,22 @@
   }
 
   .about-info {
+    .para,
+      .para p {
+        
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        color: var(--tertiary-title);
+        
+        @media #{$xs-to-md-max} {
+          font-size: 14px;
+        }
+      }
+      
+      .para p {
+        margin-bottom: 15px;
+      }
     .info-icon {
       min-width: 52px;
       max-width: 52px;
@@ -55,16 +71,21 @@
         }
       }
       
-      .para {
+      .para,
+      .para p {
         
         font-size: 16px;
         font-weight: 400;
         line-height: 25px;
         color: var(--tertiary-title);
-
+        
         @media #{$xs-to-md-max} {
           font-size: 14px;
         }
+      }
+      
+      .para p {
+        margin-bottom: 15px;
       }
     }
     .divider {
