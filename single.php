@@ -57,7 +57,7 @@
                       </div>
                     </div>
                     <h1 class="h4 title text-blue"><?php the_title(); ?></h1>
-                    <div class="wp_editor">
+                    <div class="wp_editor_content">
                       <?php the_content(); ?>
                     </div>
                   </div>
@@ -136,26 +136,20 @@
                     <div class="inactive-dot"></div>
                   </div>
                   <div class="category-box">
-                    <ul class="listing">
-                      <li class="single-list">
-                        <a class="single" href="javascript:void(0)">Food</a>
-                      </li>
-                      <li class="single-list">
-                        <a class="single" href="javascript:void(0)">Medical</a>
-                      </li>
-                      <li class="single-list active">
-                        <a class="single" href="javascript:void(0)">Global Warming</a>
-                      </li>
-                      <li class="single-list">
-                        <a class="single" href="javascript:void(0)">Wireframing</a>
-                      </li>
-                      <li class="single-list">
-                        <a class="single" href="javascript:void(0)">Recycline</a>
-                      </li>
-                      <li class="single-list">
-                        <a class="single" href="javascript:void(0)">Education</a>
-                      </li>
-                    </ul>
+                      <ul class="listing">
+                        <?php
+                        $post_categories = get_the_category();
+                        $post_category_ids = wp_list_pluck($post_categories, 'term_id');
+                        $all_categories = get_categories();
+
+                        foreach ( $all_categories as $category ) {
+                            $active_class = in_array( $category->term_id, $post_category_ids ) ? 'active' : '';
+                            echo '<li class="single-list ' . esc_attr( $active_class ) . '">';
+                            echo '<a class="single" href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>';
+                            echo '</li>';
+                        }
+                        ?>
+                      </ul>
                   </div>
                 </div>
 
@@ -168,21 +162,15 @@
                   </div>
                   <div class="tag-box">
                     <div class="tag-info">
-                      <div class="badge active">
-                        <p class="subtitle">medical</p>
-                      </div>
-                      <div class="badge">
-                        <p class="subtitle">Food</p>
-                      </div>
-                      <div class="badge">
-                        <p class="subtitle">Election</p>
-                      </div>
-                      <div class="badge">
-                        <p class="subtitle">Campaign</p>
-                      </div>
-                      <div class="badge">
-                        <p class="subtitle">Security</p>
-                      </div>
+                      <?php
+
+                        $tags = get_the_tags();
+                        if ($tags) {
+                            foreach ($tags as $tag) {
+                                echo '<div class="badge"><p class="subtitle">' . esc_html($tag->name) . '</p></div>';
+                            }
+                        }
+                      ?>
                     </div>
                   </div>
                 </div>

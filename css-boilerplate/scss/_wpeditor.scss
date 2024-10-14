@@ -2,6 +2,10 @@
  * 8.0 Alignments
  */
 
+ .wp_editor_content {
+	color: #636B6A;
+ }
+
 .wp_editor_content .post__title {
 	color: #475529;
 	font-weight: bold;
@@ -72,22 +76,31 @@
 }
 
 blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
   margin: 1.5em 10px;
-  padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
+  padding: 0.5em 10px 0.5em 90px;
+//   quotes: "\201C""\201D""\2018""\2019";
+  font-weight: bold;
+  position: relative;
 }
 blockquote:before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
+	content: "";
+	background: transparent url('./images/icons/blockquote-icon.svg') no-repeat left top;
+	font-size: 4em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+	width: 76px;
+	height: 64px;
+	display: inline-block;
+	position: absolute;
+	left:0;
+	top: 15px;
 }
 blockquote p {
-  display: inline;
+	// display: inline;
+	color: #08B6CB;
+	font-size: 24px;
+	font-weight: bold;
 }
 
 blockquote.alignleft,
