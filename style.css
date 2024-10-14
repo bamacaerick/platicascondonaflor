@@ -30454,6 +30454,9 @@ body.single-post .footer-menu .menu-item-blog .single,
 .tag-section .tag-box .tag-info .badge {
   padding: 8px 20px;
 }
+.tag-section .tag-box .tag-info .badge :hover {
+  color: var(--white);
+}
 .tag-section .tag-box .tag-info .badge .subtitle {
   font-size: 14px;
 }
@@ -30644,6 +30647,7 @@ body.single-post .footer-menu .menu-item-blog .single,
   margin-bottom: 20px;
   line-height: 140%;
   text-align: left;
+  font-size: 16px;
 }
 
 .wp_editor_content strong {
@@ -30672,24 +30676,36 @@ body.single-post .footer-menu .menu-item-blog .single,
 
 blockquote {
   margin: 1.5em 10px;
-  padding: 0.5em 10px 0.5em 90px;
   font-weight: bold;
   position: relative;
+  padding: 0.5em 10px 0.5em 60px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  blockquote {
+    padding: 0.5em 10px 0.5em 90px;
+  }
 }
 
 blockquote:before {
   content: "";
   background: transparent url("./images/icons/blockquote-icon.svg") no-repeat left top;
+  background-size: contain;
   font-size: 4em;
   line-height: 0.1em;
   margin-right: 0.25em;
   vertical-align: -0.4em;
-  width: 76px;
-  height: 64px;
+  width: 46px;
+  height: 39px;
   display: inline-block;
   position: absolute;
   left: 0;
   top: 15px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  blockquote:before {
+    width: 76px;
+    height: 64px;
+  }
 }
 
 blockquote p {

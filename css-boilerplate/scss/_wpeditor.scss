@@ -49,6 +49,7 @@
 	margin-bottom: 20px;
 	line-height: 140%;
   text-align: left;
+  font-size: 16px;
 }
 
 .wp_editor_content strong{
@@ -77,24 +78,34 @@
 
 blockquote {
   margin: 1.5em 10px;
-  padding: 0.5em 10px 0.5em 90px;
-//   quotes: "\201C""\201D""\2018""\2019";
+  //   quotes: "\201C""\201D""\2018""\2019";
   font-weight: bold;
   position: relative;
+  padding: 0.5em 10px 0.5em 60px;
+  
+  	@media #{$lg} {
+	  padding: 0.5em 10px 0.5em 90px;
+	}
 }
 blockquote:before {
 	content: "";
 	background: transparent url('./images/icons/blockquote-icon.svg') no-repeat left top;
+	background-size: contain;
 	font-size: 4em;
 	line-height: 0.1em;
 	margin-right: 0.25em;
 	vertical-align: -0.4em;
-	width: 76px;
-	height: 64px;
+	width: 46px;
+	height: 39px;
 	display: inline-block;
 	position: absolute;
 	left:0;
 	top: 15px;
+
+	@media #{$lg} {
+		width: 76px;
+		height: 64px;
+	}
 }
 blockquote p {
 	// display: inline;
