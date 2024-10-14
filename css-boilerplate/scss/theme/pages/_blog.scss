@@ -708,6 +708,10 @@
       flex-wrap: wrap;
       .badge {
         padding: 8px 20px;
+
+        :hover {
+          color: var(--white);
+        }
         .subtitle {
           font-size: 14px;
         }
