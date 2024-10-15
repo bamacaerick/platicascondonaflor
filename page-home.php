@@ -152,9 +152,11 @@ get_header();
     <?php get_template_part('parts/home-testimonials'); ?>
     <!-- Latest episodes content -->
     <?php get_template_part('parts/home-galeria'); ?>
-  <?php endwhile; ?>
- <?php endif; ?>
- <?php wp_reset_postdata(); ?>
+
 
 </main>
+
+<?php endwhile; ?>
+<?php endif; ?>
+<?php wp_reset_postdata(); ?>
 <?php get_footer(); ?>
