@@ -33,8 +33,10 @@ get_header(); ?>
                                         </div>
                                         <div class="divider-ver"></div>
                                         <div class="contact-content">
-                                            <p class="subtitle">Phone</p>
-                                            <a class="title" href="tel:8456821224">+1 (845) 682-1224</a>
+                                            <p class="subtitle"><?php the_field('phone_title'); ?></p>
+                                            <a class="title" href="tel:<?php the_field('phone_number'); ?>">
+                                            <?php the_field('phone_number'); ?>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="contact-icon-list">
@@ -43,8 +45,10 @@ get_header(); ?>
                                         </div>
                                         <div class="divider-ver"></div>
                                         <div class="contact-content">
-                                            <p class="subtitle">Email</p>
-                                            <a class="title" href="mailto:platicascondonaflor@gmail.com">platicascondonaflor@gmail.com</a>
+                                            <p class="subtitle"><?php the_field('email_title'); ?></p>
+                                            <a class="title" href="mailto:<?php the_field('email_address'); ?>">
+                                                <?php the_field('email_address'); ?>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="contact-icon-list">
@@ -54,7 +58,7 @@ get_header(); ?>
                                         <div class="divider-ver"></div>
                                         <div class="contact-content">
                                             <p class="subtitle">Location</p>
-                                            <a class="title" href="#">View on Google Maps</a>
+                                            <a class="title" href="<?php the_field('link_location'); ?>">View on Google Maps</a>
                                         </div>
                                     </div>
                                 </div>
@@ -71,7 +75,8 @@ get_header(); ?>
                                 </div>
                             </div>
                             <div class="col-xl-6">
-                                <img class="img-fluid w-100" src="<?php echo get_template_directory_uri(); ?>/images/support-image.png'); ?>" alt="">
+                                <img class="img-fluid w-100" 
+                                src="<?php the_field('principal_image') ?>" alt="">
                             </div>
                         </div>
                     </div>
