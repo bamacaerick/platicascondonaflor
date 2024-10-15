@@ -1,0 +1,180 @@
+.popup-wrapper {
+    background-color: rgba(255, 255, 255, 0.4); 
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9;
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 920px;
+
+    &-welcome,
+    &-language {
+        &-image {
+            height: 400px;
+            width: auto;
+            position: absolute;
+            z-index: 10;
+            left: 40px;
+            top: 5px;
+            display: none;
+
+            @media #{$xs-to-md-min} {
+                display: block;
+            }
+        }
+    }
+
+    &-language {
+        &-image {
+            left: 10px;
+            top: 0;
+        }
+    }
+
+    &-content {
+        width: 100%;
+        @media  #{$xs-to-md-min} {
+           padding-left: 235px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+
+    &-close {
+        position: absolute;
+        background: transparent url('./images/icons/close-icon.svg') no-repeat center;
+        background-size: contain;
+        width: 53px;
+        height: 53px;
+        top: -18px;
+        right: -18px;
+        border: none;
+    }
+
+    &-back {
+        position: absolute;
+        background: transparent url('./images/icons/back-icon.svg') no-repeat center;
+        background-size: contain;
+        width: 53px;
+        height: 53px;
+        top: -18px;
+        right: 32px;
+        border: none;
+    }
+
+    &-inner{
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg,rgba(255,255,255,1) 55%,   rgba(153,153,153,1) 100%); 
+        padding: 20px 30px;
+        border-radius: 38px;
+
+        .welcome-text {
+            background: transparent url('./images/popup-welcome-text.png') no-repeat center;
+            background-size: contain;
+            width: 280px;
+            height: 200px;
+            overflow: hidden;
+            margin: 0 auto;
+            
+            span {
+                display: block;
+                padding-top: 300px;
+            }
+
+            @media  #{$xs-to-md-min}{
+                width: 440px;
+                height: 200px;
+            }
+        }
+
+        .language-text {
+            background: transparent url('./images/popup-excelent-text.png') no-repeat center;
+            background-size: contain;
+            width: 280px;
+            height: 80px;
+            overflow: hidden;
+            margin: 0 auto;
+            
+            span {
+                display: block;
+                padding-top: 300px;
+            }
+
+            @media  #{$xs-to-md-min}{
+                width: 360px;
+                height: 80px;
+            }
+        }
+    }
+
+    &-preference-button {
+        border-radius: 19px;
+        border: none;
+        background-color: var(--primary-variant);
+        color: var(--white);
+        padding: 5px 20px;
+        font-size: 14px;
+        display: block;
+
+        &:hover {
+            color: var(--white);
+        }
+
+        span {
+            padding-left: 60px;
+            display: block;
+            position: relative;
+
+            &.popup-latino,
+            &.popup-professional,
+            &.popup-institution {
+                &:before {
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    left: 0;
+                    top: 5px;
+                    background: transparent url('./images/icons/latino-icon.svg') no-repeat left center;
+                    background-size: contain;
+                    width: 50px;
+                    height: 34px;
+                }
+            }
+
+            &.popup-professional {
+                &:before {
+                    background-image: url('./images/icons/professional-icon.svg');
+                }
+            }
+
+            &.popup-institution {
+                &:before {
+                    background-image: url('./images/icons/institution-icon.svg');
+                    left: 6px;
+                }
+            }
+        }
+    }
+
+    &-content-body {
+        max-width: 450px;
+    }
+
+    &-welcome &-content-body {
+        margin: 0 auto;
+        max-width: 300px;
+    }
+}

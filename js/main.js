@@ -58,6 +58,22 @@
         .next(".info-toggle-content")
         .slideToggle("fast");
     });
+
+
+    // Popup element
+    $(".popup-close, .popup-preference-button").on("click", function () {
+      $(".popup-wrapper").fadeOut();
+    });
+
+    $('.language').on('click', function () { 
+      $('.popup-welcome').hide();
+      $('.popup-language').show();
+    });
+
+    $('.popup-back').on('click', function () { 
+      $('.popup-welcome').show();
+      $('.popup-language').hide();
+    });
   });
 
 
