@@ -5,6 +5,23 @@
   }
 
   .about-info {
+    &-image {
+      // position: absolute;
+      // right: -40px;
+      @media #{$xs-to-md-min} {
+        position: absolute;
+        right: -40px;
+      }
+
+      img {
+        width: 100%;
+
+        @media #{$xs-to-md-min} {
+          width: unset;
+        }
+      }
+    }
+
     .para,
       .para p {
         
@@ -101,11 +118,6 @@
           display: block;
         }
       }
-
-    &-image {
-      position: absolute;
-      right: -40px;
-    }
 
     &-card {
       $card: &;

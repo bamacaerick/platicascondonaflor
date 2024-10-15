@@ -75,7 +75,7 @@ get_header();
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-5">
-                    <div class="position-absolute about-info-image">
+                    <div class="about-info-image">
                         <img class="" src="<?php echo get_template_directory_uri(); ?>/images/about.png"
                             alt="image">
                     </div>

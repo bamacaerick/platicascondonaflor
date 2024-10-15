@@ -165,5 +165,6 @@
                     </div>
                 </div>
             </div>
+            <?php get_template_part('parts/popup'); ?>
         </header>
     <div class="body-content">

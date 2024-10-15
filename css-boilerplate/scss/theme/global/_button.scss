@@ -1,7 +1,7 @@
 //Btn multiple style
 
 // Fill button
-@each $btn-name, $btn-color in (primary, var(--primary-btn)),
+@each $btn-name, $btn-color in (primary, var(--primary-btn)), (primary-variant, var(--primary-variant-btn)),
   (secondary, var(--secondary-btn)), (tertiary, var(--tertiary-btn)),
   (light, $light-gray), (dark, $dark-color), ("", $dark-color),
   (warning, $warning-color), ("green", var(--green))
@@ -22,6 +22,10 @@
     
     @if ($btn-name == primary) {
       background: var(--primary-btn);
+    }
+
+     @if ($btn-name == primary-variant) {
+      background: var(--primary-variant-btn);
     }
 
     @if ($btn-name == secondary) {
@@ -52,6 +56,12 @@
         border: 1px solid var(--primary-btn);
         color: var(--primary-btn);
       }
+
+      @if ($btn-name == primary-variant) {
+        border: 1px solid var(--primary-variant-btn);
+        color: var(--primary-variant-btn);
+      }
+
       @if ($btn-name == "green") {
         border: 1px solid var(--green);
         color: var(--green);
@@ -106,7 +116,7 @@
 }
 
 // Border button
-@each $btn-name, $btn-color in (primary, var(--primary-btn)),
+@each $btn-name, $btn-color in (primary, var(--primary-btn)), (primary-variant, var(--primary-variant-btn)),
   (secondary, var(--secondary-btn)), (tertiary, var(--tertiary-btn)), (light, $light-gray),
   (dark, $dark-color), (warning, $warning-color), ("green", var(--green)), ("blue", var(--blue))
 {
@@ -127,6 +137,12 @@
       color: var(--primary-btn);
       border: 1px solid var(--primary-btn);
     }
+
+    @if ($btn-name == primary-variant) {
+      color: var(--primary-variant-btn);
+      border: 1px solid var(--primary-variant-btn);
+    }
+
     @if ($btn-name == secondary) {
       color: var(--secondary-btn);
       border: 1px solid var(--secondary-btn);
@@ -148,6 +164,12 @@
         border: 1px solid var(--primary-btn);
         background: var(--primary-btn);
       }
+
+      @if ($btn-name == primary-variant) {
+        border: 1px solid var(--primary-variant-btn);
+        background: var(--primary-variant-btn);
+      }
+
       @if ($btn-name == secondary) {
         border: 1px solid var(--secondary-btn);
         background: var(--secondary-btn);
@@ -688,4 +710,9 @@
       color: var(--primary);
     }
   }
+}
+
+.btn-small {
+  height: 40px;
+  padding: 8px 25px;
 }
