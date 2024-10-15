@@ -67,23 +67,30 @@
                                 <a class="single" href="<?php echo get_bloginfo('url'); ?>">Home</a>
                             </li>
                             <li class="single-list">
-                                <a class="single" href="#">Meet flor</a>
+                                <a class="single" href="<?php the_field('Explore-Meet-flor-url') ?>">
+                                    <?php the_field('explore-meet-flor-titlle') ?>        
+                                </a>
                             </li>
                             <li class="single-list">
-                                <a class="single" href="#">Podcast</a>
+                                <a class="single" 
+                                href="<?php the_field('Explore-podcast-url') ?>">
+                                <?php the_field('Explore-podcast-titlle') ?></a>
                             </li>
                         </ul>
                     </div>
                     <div class="footer-social-link mt-5 mb-4 mb-lg-0">
                         <ul class="listing">
                             <li class="single-list">
-                                <a class="single" href=""><i class="ri-facebook-fill"></i></a>
+                                <a class="single" href="<?php the_field('facebook') ?>">
+                                    <i class="ri-facebook-fill"></i></a>
                             </li>
                             <li class="single-list">
-                                <a class="single" href=""><i class="ri-youtube-fill"></i></a>
+                                <a class="single" href="<?php the_field('youtube') ?>">
+                                    <i class="ri-youtube-fill"></i></a>
                             </li>
                             <li class="single-list">
-                                <a class="single" href=""><i class="ri-instagram-line"></i></a>
+                                <a class="single" href="<?php the_field('instagram') ?>">
+                                    <i class="ri-instagram-line"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -98,7 +105,9 @@
                                         <i class="ri-mail-fill"></i>
                                     </div>
                                     <a class="single"
-                                        href="mailto:platicascondonaflor@gmail.com">platicascondonaflor@gmail.com</a>
+                                        href="mailto:<?php the_field('Footer-Email') ?>">
+                                            <?php the_field('Footer-Email') ?>
+                                        </a>
                                 </div>
                             </li>
                             <li class="single-list">
@@ -106,7 +115,8 @@
                                     <div class="imp-icon">
                                         <i class="ri-phone-fill"></i>
                                     </div>
-                                    <a class="single" href="tel:+8456821224">+1 (845) 682-1224</a>
+                                    <a class="single" href="tel:+<?php the_field('Footer_-_Phone') ?>">
+                                    <?php the_field('Footer_-_Phone') ?> </a>
                                 </div>
                             </li>
                             <li class="single-list">
@@ -114,7 +124,7 @@
                                     <div class="imp-icon">
                                         <i class="ri-map-pin-2-fill"></i>
                                     </div>
-                                    <span class="single">2406 Rockwood Ave, Baltimore, MD 21209</span>
+                                    <span class="single"><?php the_field('Footer-Address') ?></span>
                                 </div>
                             </li>
                         </ul>
