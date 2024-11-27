@@ -59,77 +59,82 @@
             </div>
             <hr class="footer-line">
             <div class="footer-imp-link row g-4 justify-content-between">
-                <div class="col-xl-3 col-lg-3">
-                    <div class="footer-link">
-                        <h4 class="title">Explore</h4>
-                        <ul class="imp-link">
-                            <li class="single-list">
-                                <a class="single" href="<?php echo get_bloginfo('url'); ?>">Home</a>
-                            </li>
-                            <li class="single-list">
-                                <a class="single" href="<?php the_field('Explore-Meet-flor-url') ?>">
-                                    <?php the_field('explore-meet-flor-titlle') ?>        
-                                </a>
-                            </li>
-                            <li class="single-list">
-                                <a class="single" 
-                                href="<?php the_field('Explore-podcast-url') ?>">
-                                <?php the_field('Explore-podcast-titlle') ?></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer-social-link mt-5 mb-4 mb-lg-0">
-                        <ul class="listing">
-                            <li class="single-list">
-                                <a class="single" href="<?php the_field('facebook') ?>">
-                                    <i class="ri-facebook-fill"></i></a>
-                            </li>
-                            <li class="single-list">
-                                <a class="single" href="<?php the_field('youtube') ?>">
-                                    <i class="ri-youtube-fill"></i></a>
-                            </li>
-                            <li class="single-list">
-                                <a class="single" href="<?php the_field('instagram') ?>">
-                                    <i class="ri-instagram-line"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-5 col-lg-5">
-                    <div class="footer-link">
-                        <h4 class="title">Contact me</h4>
-                        <ul class="imp-link">
-                            <li class="single-list">
-                                <div class="d-flex align-items-center gap-10 mb-20">
-                                    <div class="imp-icon">
-                                        <i class="ri-mail-fill"></i>
-                                    </div>
-                                    <a class="single"
-                                        href="mailto:<?php the_field('Footer-Email') ?>">
-                                            <?php the_field('Footer-Email') ?>
-                                        </a>
+                <?php 
+                    $getHomeFields = new WP_Query( array( 'pagename' => 'home' ) ); 
+                        if ($getHomeFields->have_posts()) : while ($getHomeFields->have_posts()): $getHomeFields->the_post();?>
+                            <div class="col-xl-3 col-lg-3">
+                                <div class="footer-link">
+                                    <h4 class="title">Explore</h4>
+                                    <ul class="imp-link">
+                                        <li class="single-list">
+                                            <a class="single" href="<?php echo get_bloginfo('url'); ?>">Home</a>
+                                        </li>
+                                        <li class="single-list">
+                                            <a class="single" href="<?php the_field('meet-flor-url') ?>">
+                                                <?php the_field('meet-flor-title') ?>        
+                                            </a>
+                                        </li>
+                                        <li class="single-list">
+                                            <a class="single" 
+                                            href="<?php the_field('podcast-url') ?>">
+                                            <?php the_field('podcast-title') ?></a>
+                                        </li>
+                                    </ul>
                                 </div>
-                            </li>
-                            <li class="single-list">
-                                <div class="d-flex align-items-center gap-10 mb-20">
-                                    <div class="imp-icon">
-                                        <i class="ri-phone-fill"></i>
-                                    </div>
-                                    <a class="single" href="tel:+<?php the_field('Footer_-_Phone') ?>">
-                                    <?php the_field('Footer_-_Phone') ?> </a>
+                                <div class="footer-social-link mt-5 mb-4 mb-lg-0">
+                                    <ul class="listing">
+                                        <li class="single-list">
+                                            <a class="single" href="<?php the_field('facebook') ?>">
+                                                <i class="ri-facebook-fill"></i></a>
+                                        </li>
+                                        <li class="single-list">
+                                            <a class="single" href="<?php the_field('youtube') ?>">
+                                                <i class="ri-youtube-fill"></i></a>
+                                        </li>
+                                        <li class="single-list">
+                                            <a class="single" href="<?php the_field('instagram') ?>">
+                                                <i class="ri-instagram-line"></i></a>
+                                        </li>
+                                    </ul>
                                 </div>
-                            </li>
-                            <li class="single-list">
-                                <div class="d-flex align-items-center gap-10 mb-20">
-                                    <div class="imp-icon">
-                                        <i class="ri-map-pin-2-fill"></i>
-                                    </div>
-                                    <span class="single"><?php the_field('Footer-Address') ?></span>
+                            </div>
+                            
+                            <div class="col-xl-5 col-lg-5">
+                                <div class="footer-link">
+                                    <h4 class="title">Contact me</h4>
+                                    <ul class="imp-link">
+                                        <li class="single-list">
+                                            <div class="d-flex align-items-center gap-10 mb-20">
+                                                <div class="imp-icon">
+                                                    <i class="ri-mail-fill"></i>
+                                                </div>
+                                                <a class="single"
+                                                    href="mailto:<?php the_field('footer-flor-email') ?>">
+                                                        <?php the_field('footer-flor-email') ?>
+                                                    </a>
+                                            </div>
+                                        </li>
+                                        <li class="single-list">
+                                            <div class="d-flex align-items-center gap-10 mb-20">
+                                                <div class="imp-icon">
+                                                    <i class="ri-phone-fill"></i>
+                                                </div>
+                                                <a class="single" href="tel:+<?php the_field('footer-phone') ?>">
+                                                <?php the_field('footer-phone') ?> </a>
+                                            </div>
+                                        </li>
+                                        <li class="single-list">
+                                            <div class="d-flex align-items-center gap-10 mb-20">
+                                                <div class="imp-icon">
+                                                    <i class="ri-map-pin-2-fill"></i>
+                                                </div>
+                                                <span class="single"><?php the_field('footer-flor-address') ?></span>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                            </div>
+                    <?php endwhile; endif; wp_reset_postdata(); ?>    
                 <div class="col-xl-4 col-lg-4">
                     <div class="footer-link">
                         <h4 class="title">Latest articles</h4>
@@ -170,7 +175,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <?php endwhile; endif; ?>
+                            <?php endwhile; endif; wp_reset_postdata();?>
                         </ul>
                     </div>
                 </div>

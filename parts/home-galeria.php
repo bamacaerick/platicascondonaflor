@@ -13,7 +13,7 @@
             while ($podcasts_query->have_posts()) : $podcasts_query->the_post(); ?>
                 <div class="gallery-img podcast-gallery-slide">
                     <a href="<?php the_field('link_to_podcast'); ?>">
-                        <img src="<?php echo$featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="img">
+                        <img src="<?php echo$featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'podcast'); ?>" alt="img">
                         <div class="podcast-gallery-data wow">
                             <h4 class="podcast-gallery-data-episode text-uppercase"><?php the_title(); ?></h4>
                             <p class="podcast-gallery-data-title text-uppercase">
