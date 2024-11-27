@@ -1,4 +1,15 @@
 <?php
+
+
+function custom_get_page_id($nicename)
+{
+    global $wpdb;
+    $the_id = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_name = '$nicename' and post_type='page' AND post_status='publish'");
+    return $the_id;
+}
+
+$HOMEID = custom_get_page_id('home');
+
 add_action('after_setup_theme', 'generic_setup');
 function generic_setup()
 {
@@ -27,6 +38,9 @@ function generic_enqueue()
     wp_enqueue_script( 'bootstrap-5.3.0.min', get_template_directory_uri() . '/js/bootstrap-5.3.0.min.js', array( 'popper.min' ), '1.0.0', true );
     wp_enqueue_script( 'plugin', get_template_directory_uri() . '/js/plugin.js', array( 'bootstrap-5.3.0.min' ), '1.0.0', true );
     wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'plugin' ), '1.0.0', true );
+    if(is_page_template('page-home.php')) {
+        wp_enqueue_script( 'popup', get_template_directory_uri() . '/js/popup.js', array( 'main' ), '1.0.0', true );
+    }
 }
 add_action('wp_footer', 'generic_footer');
 function generic_footer()
@@ -242,6 +256,7 @@ function generic_excerpt_read_more_link($more)
 function custom_theme_setup()
 {
     add_image_size('feature_blog_listing', 800, 600, true); // Width: 800px, Height: 600px, Crop: true
+    add_image_size('podcast', 750, 475, true); // Width: 800px, Height: 600px, Crop: true
 }
 add_action('after_setup_theme', 'custom_theme_setup');
 

@@ -82,7 +82,7 @@
         border-radius: 38px;
 
         .welcome-text {
-            background: transparent url('./images/popup-welcome-text.png') no-repeat center;
+            background: transparent url('./images/popup-welcome-en-text.png') no-repeat center;
             background-size: contain;
             width: 280px;
             height: 200px;
@@ -101,7 +101,7 @@
         }
 
         .language-text {
-            background: transparent url('./images/popup-excelent-text.png') no-repeat center;
+            background: transparent url('./images/popup-excelent-en-text.png') no-repeat center;
             background-size: contain;
             width: 280px;
             height: 80px;
@@ -117,6 +117,18 @@
                 width: 360px;
                 height: 80px;
             }
+        }
+    }
+
+    &-language#en {
+        .language-text {
+            background-image: url('./images/popup-excelent-en-text.png');
+        }
+    }
+
+    &-language#es {
+        .language-text {
+            background-image: url('./images/popup-excelent-text.png');
         }
     }
 

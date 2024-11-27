@@ -50,6 +50,8 @@
   .gallery-slider {
     .slick-slide {
       margin: 0 10px;
+      overflow: hidden;
+      border-radius: 15px;
       img {
         width: 100%;
         height: 100%;
@@ -101,20 +103,18 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 0 40px 10px 40px;
+    padding: 10px 30px;
+    background-color: #fff;
 
     @media #{$md} {
       padding: 0 80px 10px 60px;
     }
 
     &-episode {
-      color: var(--white);
-      background-color: var(--primary-variant);
-      font-size: 14px;
+      color: var(--primary-variant);
+      font-size: 18px;
       display: inline-block;
-      border-top-right-radius: 12px;
-      border-bottom-right-radius: 12px;
-      padding: 5px 20px 5px 10px;
+      font-weight: bold;
     }
 
     &-title {

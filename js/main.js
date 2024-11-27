@@ -59,21 +59,6 @@
         .slideToggle("fast");
     });
 
-
-    // Popup element
-    $(".popup-close, .popup-preference-button").on("click", function () {
-      $(".popup-wrapper").fadeOut();
-    });
-
-    $('.language').on('click', function () { 
-      $('.popup-welcome').hide();
-      $('.popup-language').show();
-    });
-
-    $('.popup-back').on('click', function () { 
-      $('.popup-welcome').show();
-      $('.popup-language').hide();
-    });
   });
 
 
@@ -123,8 +108,9 @@
     );
     BasicSlider.slick({
       autoplay: true,
-      autoplaySpeed: 4000,
-      dots: false,
+      infinite: true,
+      autoplaySpeed: 6000,
+      dots: true,
       fade: true,
       arrows: false,
       // rtl: true, // Enable RTL support
@@ -429,12 +415,18 @@
     slider- custom home banner
   ----------------------------------------------*/
   $(".home-slider").slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 6000,
+    dots: true,
     infinite: true,
     arrows: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    // rtl: true, // Enable RTL support
+    prevArrow:
+      '<button type="button" class="slick-prev slick-arrow"><i class="ri-arrow-left-s-line"></i></button>',
+    nextArrow:
+      '<button type="button" class="slick-next slick-arrow"><i class="ri-arrow-right-s-line"></i></button>',
     // responsive: [
     //   {
     //     breakpoint: 1200,

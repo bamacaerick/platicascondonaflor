@@ -28393,7 +28393,7 @@ body.single-post .header-area .menu-item-blog .single::before, .header-area .mai
 }
 
 .hero-caption {
-  max-width: 615px;
+  max-width: 650px;
 }
 .hero-caption .short-dec {
   font-size: 28px;
@@ -29319,6 +29319,8 @@ body.single-post .footer-menu .menu-item-blog .single,
 }
 .gallery-area .gallery-slider .slick-slide {
   margin: 0 10px;
+  overflow: hidden;
+  border-radius: 15px;
 }
 .gallery-area .gallery-slider .slick-slide img {
   width: 100%;
@@ -29366,7 +29368,8 @@ body.single-post .footer-menu .menu-item-blog .single,
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 0 40px 10px 40px;
+  padding: 10px 30px;
+  background-color: #fff;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .podcast-gallery-data {
@@ -29374,13 +29377,10 @@ body.single-post .footer-menu .menu-item-blog .single,
   }
 }
 .podcast-gallery-data-episode {
-  color: var(--white);
-  background-color: var(--primary-variant);
-  font-size: 14px;
+  color: var(--primary-variant);
+  font-size: 18px;
   display: inline-block;
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
-  padding: 5px 20px 5px 10px;
+  font-weight: bold;
 }
 .podcast-gallery-data-title {
   font-size: 14px;
@@ -29529,7 +29529,7 @@ body.single-post .footer-menu .menu-item-blog .single,
   border-radius: 38px;
 }
 .popup-inner .welcome-text {
-  background: transparent url("./images/popup-welcome-text.png") no-repeat center;
+  background: transparent url("./images/popup-welcome-en-text.png") no-repeat center;
   background-size: contain;
   width: 280px;
   height: 200px;
@@ -29547,7 +29547,7 @@ body.single-post .footer-menu .menu-item-blog .single,
   }
 }
 .popup-inner .language-text {
-  background: transparent url("./images/popup-excelent-text.png") no-repeat center;
+  background: transparent url("./images/popup-excelent-en-text.png") no-repeat center;
   background-size: contain;
   width: 280px;
   height: 80px;
@@ -29563,6 +29563,12 @@ body.single-post .footer-menu .menu-item-blog .single,
     width: 360px;
     height: 80px;
   }
+}
+.popup-language#en .language-text {
+  background-image: url("./images/popup-excelent-en-text.png");
+}
+.popup-language#es .language-text {
+  background-image: url("./images/popup-excelent-text.png");
 }
 .popup-preference-button {
   border-radius: 19px;
