@@ -28389,7 +28389,21 @@ body.single-post .header-area .menu-item-blog .single::before, .header-area .mai
   background-position: right bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+}
+@media (max-width: 575px) {
+  .hero-area-two {
+    background-size: 160%;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .hero-area-two {
+    background-size: 140%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .hero-area-two {
+    background-size: 125%;
+  }
 }
 
 .hero-caption {
@@ -28477,17 +28491,17 @@ body.single-post .header-area .menu-item-blog .single::before, .header-area .mai
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .hero-padding-two {
-    padding: 130px 0 80px 0;
+    padding: 130px 0 250px 0;
   }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .hero-padding-two {
-    padding: 130px 0 70px 0;
+    padding: 130px 0 250px 0;
   }
 }
 @media (max-width: 575px) {
   .hero-padding-two {
-    padding: 120px 0 50px 0;
+    padding: 120px 0 250px 0;
   }
 }
 @media (max-width: 991px) {
@@ -29342,7 +29356,7 @@ body.single-post .footer-menu .menu-item-blog .single,
 }
 @media (max-width: 991px) {
   .gallery-area .gallery-slider .slick-dots {
-    bottom: 10px;
+    bottom: -20px;
   }
 }
 .gallery-area .gallery-slider .slick-dots li {
@@ -29365,15 +29379,15 @@ body.single-post .footer-menu .menu-item-blog .single,
 }
 
 .podcast-gallery-data {
-  position: absolute;
   bottom: 0;
   width: 100%;
   padding: 10px 30px;
   background-color: #fff;
 }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
   .podcast-gallery-data {
     padding: 0 80px 10px 60px;
+    position: absolute;
   }
 }
 .podcast-gallery-data-episode {

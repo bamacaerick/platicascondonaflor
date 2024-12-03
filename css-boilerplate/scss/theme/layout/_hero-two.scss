@@ -1,9 +1,20 @@
 .hero-area-two {
-  background: linear-gradient(170deg, rgba(255, 117, 0, 0) 20%, rgba(255, 117, 0, 0.20) 100%);
-  background-position: right bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+    background: linear-gradient(170deg, rgba(255, 117, 0, 0) 20%, rgba(255, 117, 0, 0.20) 100%);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media #{$xs} {
+      background-size: 160%;
+    }
+    @media #{$sm} {
+      background-size: 140%;
+    }
+     @media #{$md} {
+      background-size: 125%;
+    }
+
+
   // &::before {
   //   content: "";
   //   position: absolute;
@@ -86,13 +97,13 @@
       padding: 150px 0 100px 0;
     }
     @media #{$md} {
-      padding: 130px 0 80px 0;
+      padding: 130px 0 250px 0;
     }
     @media #{$sm} {
-      padding: 130px 0 70px 0;
+      padding: 130px 0 250px 0;
     }
     @media #{$xs} {
-      padding: 120px 0 50px 0;
+      padding: 120px 0 250px 0;
     }
     .hero-count-section{
       @media #{$xs-to-md-max}{

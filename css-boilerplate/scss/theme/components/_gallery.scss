@@ -74,7 +74,7 @@
       width: 100%;
       list-style-type: none;
       @media #{$xs-to-md-max} {
-        bottom: 10px;
+        bottom: -20px;
       }
       li {
         margin: 0 0.25rem;
@@ -100,14 +100,15 @@
 
 .podcast-gallery {
   &-data {
-    position: absolute;
+    
     bottom: 0;
     width: 100%;
     padding: 10px 30px;
     background-color: #fff;
 
-    @media #{$md} {
+    @media #{$lg} {
       padding: 0 80px 10px 60px;
+      position: absolute;
     }
 
     &-episode {

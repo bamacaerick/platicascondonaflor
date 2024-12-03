@@ -67,14 +67,14 @@ get_header(); ?>
                     </div>
                     <div class="top-padding4">
                         <div class="row gy-24">
-                            <div class="col-xl-6">
+                            <div class="col-12 col-xl-6">
                                 <div class="send-box">
                                     <div class="custom-form support-page">
                                         <?php the_content(); ?>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-6">
+                            <div class="col-12 col-xl-6">
                                 <img class="img-fluid w-100" 
                                 src="<?php the_field('principal_image') ?>" alt="">
                             </div>
