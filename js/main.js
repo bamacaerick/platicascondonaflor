@@ -58,7 +58,6 @@
         .next(".info-toggle-content")
         .slideToggle("fast");
     });
-
   });
 
 
@@ -452,9 +451,12 @@
   /*----------------------------------------------
     Select 2
   ----------------------------------------------*/
+  var parentElement = $(".select-wrapper");
   $(".select2").select2({
     placeholder: "Choose one",
     width: "100%",
+    minimumResultsForSearch: -1,
+    dropdownParent: parentElement,
   });
 
   /*----------------------------------------------

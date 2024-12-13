@@ -350,6 +350,10 @@
     padding: 30px;
   }
 }
+.wpcf7-form {
+  width: 100%;
+  position: relative;
+}
 .custom-form {
   $form: &;
   .form-group {
@@ -365,28 +369,52 @@
       font-size: 14px;
     }
   }
-  .custom-input,
-  .select2 .select2-selection--single  {
+  .custom-input  {
     padding: 15px 20px;
     border-radius: 8px;
     height: 50px;
     background-color: var(--secondary-gray);
     border: 1px solid var(--primary-gray);
-    font-size: 16px;
+    font-size: 16px!important;
     font-weight: 400;
     line-height: 130%;
     color: var(--tertiary-title);
+    max-width: 100%;
     &:focus {
       box-shadow: none;
       border: 1px solid var(--primary);
     }
     @media #{$xs-to-sm-max} {
-      font-size: 14px;
       padding: 14px 18px;
       height: 46px;
+      background-color: var(--secondary-gray);
+    border: 1px solid var(--primary-gray);
     }
 
   }
+
+  .select2-selection.select2-selection--single {
+    padding: 10px 20px;
+    height: 50px;
+    background-color: var(--secondary-gray);
+    border: 1px solid var(--primary-gray);
+    font-size: 16px;
+    color: var(--primary-title);
+
+    .select2-selection__rendered {
+      padding: 0;
+    }
+
+    .select2-selection__arrow {
+      top: 12px;
+    }
+
+    @media #{$xs-to-sm-max} {
+      padding: 9px 18px;
+      height: 46px;
+    }
+  }
+
   .custom-textarea {
     padding: 17px 20px;
     border-radius: 8px;
@@ -402,7 +430,6 @@
       border: 1px solid var(--primary);
     }
     @media #{$xs-to-sm-max} {
-      font-size: 14px;
       padding: 14px 18px;
       min-height: 140px;
     }
@@ -425,7 +452,6 @@
     border: 1px solid var(--primary);
   }
   @media #{$xs-to-sm-max} {
-    font-size: 14px;
     padding: 14px 24px;
   }
   &.outline{

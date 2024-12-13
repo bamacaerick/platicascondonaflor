@@ -50,7 +50,7 @@
                 </div>
                 <div class="row mt-5">
                     <div class="col-12 col-lg-4">
-                        <p>If you’d like to talk with me, you can do so at:</p>
+                        <p><?php echo get_field('text_below_pictures'); ?></p>
                     </div>
                     <div class="col-12 col-lg-8">
                         <div class="d-flex mb-2">
