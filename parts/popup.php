@@ -53,9 +53,9 @@
                             <p class="language-text"><span>Excellent!</span></p>
                             <div class="popup-content-body">
                                 <p class="text-primary-variant text-center mb-3">To support you better,<br> please select your area of interest:</p>
-                                <a href="<?php echo get_bloginfo('url');?>/#podcast" class="popup-preference-button text-start w-100  mb-1"><span class="popup-latino">I’m <strong>Latinx</strong> and want more information about Talks with Doña Flor.</span></a>
+                                <a href="<?php echo get_bloginfo('url');?>/#podcast" class="popup-preference-button text-start w-100  mb-1"><span class="popup-latino">I’m <strong>Latinx</strong> and want more information about Talking with Doña Flor.</span></a>
                                 <a href="<?php echo get_bloginfo('url');?>/support" class="popup-preference-button text-start w-100  mb-1"><span class="popup-professional">I’m a <strong>professional</strong> interested in supporting a program.</span></a>
-                                <a href="<?php echo get_bloginfo('url');?>/#about-me" class="popup-preference-button text-start w-100  mb-1"><span class="popup-institution">I’m a <strong>director of an institution</strong> and interested in developing a program for the community.</span></a>
+                                <a href="<?php echo get_bloginfo('url');?>/#about-me" class="popup-preference-button text-start w-100  mb-1"><span class="popup-institution">I’m a <strong>director of an organization</strong> and interested in developing a program for the Latinex community.</span></a>
                             </div>
                         </div>
                     </div>
