@@ -4,7 +4,7 @@ Theme Name: Platicas con Dona Flor
 Author: Erick Bamaca @bamacaerick for custom design integration | Bryan Hadaway for core base | Estudio Dual for design
 Description: A fully responsive, SEO-friendly, Schema-ready, Accessibility-ready, based on Bootstrap 5.1 Grid and utilities.
 Tags: accessibility-ready, one-column, two-columns, right-sidebar, custom-logo, custom-menu, featured-images, microformats, sticky-post, threaded-comments, translation-ready, blog, e-commerce, portfolio
-Version: 1.0.4
+Version: 1.0.5
 Requires PHP: 7.0
 */
 /*!
@@ -28334,10 +28334,57 @@ body.single-post .header-area .menu-item-blog .single::before, .header-area .mai
   }
 }
 
+.header-right {
+  display: flex;
+}
+
 .cart {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-right: 10px;
+}
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.lang-switcher .trp-ls-shortcode-current-language {
+  background-color: rgb(255, 117, 0);
+  color: rgb(255, 255, 255);
+  background-image: url("./images/icons/lang-caret.svg");
+  background-size: 14px;
+  padding: 0px 20px 0px 13px;
+  border-radius: 25px;
+  background-position: 65px 12px;
+  border: 0;
+  width: 100px !important;
+}
+.lang-switcher .trp-ls-shortcode-current-language > .trp-ls-shortcode-disabled-language {
+  color: #fff;
+}
+.lang-switcher .trp-ls-shortcode-language {
+  border: 0;
+  background-image: url("./images/icons/lang-caret-gray.svg") !important;
+  background-size: 14px;
+  background-repeat: no-repeat;
+  background-position: 65px 14px;
+  padding-top: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 103px !important;
+}
+.lang-switcher .trp-ls-shortcode-language .trp-ls-shortcode-disabled-language {
+  color: #636B6A;
+  width: 103px;
+  padding-left: 24px !important;
+}
+.lang-switcher .trp-ls-shortcode-language .trp-ls-shortcode-disabled-language + a {
+  padding-left: 24px !important;
+  background-color: rgb(255, 117, 0);
+  border-radius: 25px !important;
+  color: #fff !important;
 }
 
 .header-sticky.sticky-bar {

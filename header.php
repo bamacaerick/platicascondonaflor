@@ -151,7 +151,10 @@
                                     <div class="header-right">
                                         <div class="cart">
                                             <a href="javascript:void(0)" class="rounded-btn search-bar"><i
-                                                    class="ri-search-line"></i></a>
+                                            class="ri-search-line"></i></a>
+                                        </div>
+                                        <div class="lang-switcher">
+                                            <?php echo do_shortcode('[language-switcher]'); ?>
                                         </div>
                                     </div>
                                 </div>
